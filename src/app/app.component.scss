@@ -1,0 +1,38 @@
+
+// top toolbar
+mat-toolbar{
+    height: 56px !important;
+
+    // the spacing in the middle
+    .fill-remaining-space{
+        flex: 1;
+    }
+
+    // toolbar items
+    .toolbar-item{
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    .selection-field{
+        width: 100px;
+    }
+
+    mat-checkbox {
+        font-size: 14px;
+    }
+
+    // the "Loading" bar
+    mat-progress-bar {
+        position: fixed;
+    }
+}
+
+.main-content {
+    height: calc( 100vh - 56px );
+    display: block;
+    overflow: hidden scroll;
+    table {
+        width: 100%;
+    }
+}
