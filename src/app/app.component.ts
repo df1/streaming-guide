@@ -3,6 +3,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import * as XLSX from 'xlsx';
 import { SelectionModel } from '@angular/cdk/collections';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +20,13 @@ export class AppComponent implements OnInit{
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
+  constructor(
+    private snackBar: MatSnackBar
+  ) {}
+
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.snackBar.open('We use cookies to improve your user experience and for web traffic statistics purposes. By continuing to use this website, you agree to our use of cookies.', 'I agree');
   }
 
   exportExcel() {
