@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "streaming-guide"
+  "defaultProject": "streaming-guide",
+  "cli": {
+    "analytics": "6f5eadc8-2fdd-4d0d-ab1e-56fec2a147cd"
+  }
 }
