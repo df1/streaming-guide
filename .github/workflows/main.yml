@@ -17,6 +17,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.16.2
+    - name: Install and Build 🔧
+      run: |
+        npm install
+        npm run build --prod
     - name: Build and Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
@@ -24,4 +28,3 @@ jobs:
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: dist/streaming-guide
-        BUILD_SCRIPT: npm install && npm run build -- --prod
