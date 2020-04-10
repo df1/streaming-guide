@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'Streaming Guide';
+  title = '楓林晚';
   isLoading = false;
 
   displayedColumns: string[] = ['select','name'];
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
-    this.snackBar.open('We use cookies to improve your user experience and for web traffic statistics purposes. By continuing to use this website, you agree to our use of cookies.', 'I agree');
+    this.snackBar.open('We use cookies to improve your user experience and for statistics purposes. By continuing to use this website, you agree to our use of cookies.', 'I agree');
   }
 
   exportExcel() {
