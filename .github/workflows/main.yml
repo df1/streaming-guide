@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: 12.16.2
     - name: Build and Deploy
-      uses: df1/streaming-guide@master
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BASE_BRANCH: master
