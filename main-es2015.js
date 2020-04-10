@@ -117,7 +117,7 @@ function AppComponent_tr_20_Template(rf, ctx) { if (rf & 1) {
 class AppComponent {
     constructor(snackBar) {
         this.snackBar = snackBar;
-        this.title = 'Streaming Guide';
+        this.title = '楓林晚';
         this.isLoading = false;
         this.displayedColumns = ['select', 'name'];
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](SAMPLE_DATA);
@@ -125,7 +125,7 @@ class AppComponent {
     }
     ngOnInit() {
         this.dataSource.sort = this.sort;
-        this.snackBar.open('We use cookies to improve your user experience and for web traffic statistics purposes. By continuing to use this website, you agree to our use of cookies.', 'I agree');
+        this.snackBar.open('We use cookies to improve your user experience and for statistics purposes. By continuing to use this website, you agree to our use of cookies.', 'I agree');
     }
     exportExcel() {
         /* table id is passed over here */

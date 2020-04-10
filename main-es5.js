@@ -274,7 +274,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         _classCallCheck(this, AppComponent);
 
         this.snackBar = snackBar;
-        this.title = 'Streaming Guide';
+        this.title = '楓林晚';
         this.isLoading = false;
         this.displayedColumns = ['select', 'name'];
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](SAMPLE_DATA);
@@ -285,7 +285,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "ngOnInit",
         value: function ngOnInit() {
           this.dataSource.sort = this.sort;
-          this.snackBar.open('We use cookies to improve your user experience and for web traffic statistics purposes. By continuing to use this website, you agree to our use of cookies.', 'I agree');
+          this.snackBar.open('We use cookies to improve your user experience and for statistics purposes. By continuing to use this website, you agree to our use of cookies.', 'I agree');
         }
       }, {
         key: "exportExcel",
