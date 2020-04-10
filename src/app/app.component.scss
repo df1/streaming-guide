@@ -31,7 +31,8 @@ mat-toolbar{
 .main-content {
     height: calc( 100vh - 56px );
     display: block;
-    overflow: hidden scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
     table {
         width: 100%;
     }
