@@ -5,7 +5,7 @@ This project is to provide a guide to video watchers where can they watch a spec
 
 # Supported Streaming Platforms
 ## Taiwan
-- Apple TV+
+- Apple TV+
 - Amazon Prime Video
 - CATCHPLAY+
 - friDay影音
