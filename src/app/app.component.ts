@@ -26,7 +26,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
-    this.snackBar.open('We use cookies to improve your user experience and for statistics purposes. By continuing to use this website, you agree to our use of cookies.', 'I agree');
+    this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。', 
+      '同意', { horizontalPosition: 'right'});
   }
 
   exportExcel() {
