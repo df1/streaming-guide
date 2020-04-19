@@ -5,6 +5,7 @@ import * as XLSX from 'xlsx';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,18 @@ import { MediaMatcher } from '@angular/cdk/layout';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  @ViewChild('sidenav') sidenav: MatSidenav           ;
   title = '楓林晚';
+  menuTree = [
+    { name: '首頁', link:'/', showInToolbar: false },
+    { name: '電影', link:'movies' },
+    { name: '台劇', link:'taiwan' },
+    { name: '美劇', link:'usa' },
+    { name: '陸劇', link:'china' },
+    { name: '日劇', link:'japan' },
+    { name: '韓劇', link:'korea' },
+  ];
+  toolbarMenu = this.menuTree.filter(i=>i.showInToolbar!==false);
   isLoading = false;
   constructor(
     private snackBar: MatSnackBar,

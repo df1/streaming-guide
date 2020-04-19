@@ -1,12 +1,8 @@
 <mat-toolbar color="primary">
   <button mat-icon-button (click)="snav.toggle()" class="hamburger"><mat-icon>menu</mat-icon></button>
-  <span class="title">楓林晚 </span> &nbsp;
+  <span class="title" routerLink="/">楓林晚 </span> &nbsp;
 
-  <button mat-button>電影</button>
-  <button mat-button>台劇</button>
-  <button mat-button>美劇</button>
-  <button mat-button>陸劇</button>
-  <button mat-button>日劇</button>
+  <button mat-button *ngFor="let item of toolbarMenu" [routerLink]="item.link">{{item.name}}</button>
   <span class="fill-remaining-space"></span>
 
   <button mat-icon-button class="toolbar-item" matTooltip="Export Excel" (click)="exportExcel()">
@@ -19,11 +15,11 @@
 <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 
 
-<mat-sidenav-container class="example-sidenav-container">
+<mat-sidenav-container class="sidenav-container">
   <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
   <mat-nav-list>
-  <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+  <a mat-list-item routerLink="." *ngFor="let nav of menuTree" [routerLink]="nav.link">{{nav.name}}</a>
   </mat-nav-list>
   </mat-sidenav>
 
