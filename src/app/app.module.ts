@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,10 +39,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MainPageComponent } from './main-page/main-page.component';
+import { ListDisplayComponent } from './list-display/list-display.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainPageComponent,
+    ListDisplayComponent
   ],
   imports: [
     // MatDatepickerModule,
@@ -55,6 +60,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     // MatProgressSpinnerModule,
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     CommonModule,
     FormsModule,
     HttpClientModule,
