@@ -1,3 +1,4 @@
+
 // variables
 $breakpoint-mobile: 481px;
 $breakpoint-tablet: 768px;
@@ -9,7 +10,7 @@ $hamburgerHiddenMargin: 0 16px 0 -64px;
         @content;
     }
 }
-  
+
 @mixin tablet-up{
     @media (min-width: $breakpoint-tablet){
         @content;
@@ -23,12 +24,20 @@ mat-toolbar{
     z-index: 3;
     padding-left: 10px;
     height: 56px !important;
-    button.hamburger{
-        margin-right: 10px;
-    }
     .title{
+        padding: 10px;
         font-size: 24px;
         cursor: pointer;
+        &:focus{
+            outline: none;
+        }
+    }
+
+    .link{
+        &.active-link{
+            background-color: white;
+            color : #c2185a;
+        }
     }
 
     // the spacing in the middle
@@ -66,27 +75,32 @@ mat-toolbar{
     left: 0;
     right: 0;
   }
-  
+
   .is-mobile .toolbar {
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
     z-index: 2;
   }
-  
+
   h1.app-name {
     margin-left: 8px;
   }
-  
+
   .sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
   }
-  
+
   .is-mobile .sidenav-container {
     /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
 
+mat-nav-list a{
+    &.active-link {
+        background-color: #6b6b6b;
+    }
+}
 

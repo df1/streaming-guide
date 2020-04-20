@@ -6,6 +6,7 @@ import { ListDisplayComponent } from './list-display/list-display.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
+  { path: 'index', component: MainPageComponent },
   { path: '**', component: ListDisplayComponent }
 ];
 

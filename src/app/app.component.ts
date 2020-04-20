@@ -13,10 +13,10 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  @ViewChild('sidenav') sidenav: MatSidenav           ;
+  @ViewChild('sidenav') sidenav: MatSidenav;
   title = '楓林晚';
   menuTree = [
-    { name: '首頁', link:'/', showInToolbar: false },
+    { name: '首頁', link:'index', showInToolbar: false },
     { name: '電影', link:'movies' },
     { name: '台劇', link:'taiwan' },
     { name: '美劇', link:'usa' },
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit{
   isLoading = false;
   constructor(
     private snackBar: MatSnackBar,
-    changeDetectorRef: ChangeDetectorRef, 
+    changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。', 
+    this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。',
       '同意', { horizontalPosition: 'right'});
   }
   mobileQuery: MediaQueryList;
