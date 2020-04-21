@@ -20,9 +20,24 @@
         </mat-checkbox>
     </td>
     </ng-container>
-    <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
-    <td mat-cell *matCellDef="let item"> {{item.name}}</td>
+    <ng-container matColumnDef="poster">
+        <th mat-header-cell *matHeaderCellDef class="col-poster">海報</th>
+        <td mat-cell *matCellDef="let item"> <img style="width:50px;" src="https://image.tmdb.org/t/p/w92{{item.poster_path}}"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef class="col-title" mat-sort-header>片名</th>
+        <td mat-cell *matCellDef="let item"> {{item.title}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="overview">
+        <th mat-header-cell *matHeaderCellDef class="col-overview">簡介</th>
+        <td mat-cell *matCellDef="let item"> {{item.overview}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="popularity">
+        <th mat-header-cell *matHeaderCellDef class="col-short" mat-sort-header>熱門度</th>
+        <td mat-cell *matCellDef="let item"> {{item.popularity | number: '1.0-0' }}</td>
     </ng-container>
 
 
