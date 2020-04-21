@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+// @import '@angular/material/prebuilt-themes/pink-bluegrey.scss';
+@import '~@angular/material/theming';
+@import './styles/variables.scss';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #424242;}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: mat-color($background, default);
+}
 
 /* cutsom scrrollbars */
 /* width */
