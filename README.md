@@ -2,6 +2,11 @@
 
 This project is to provide a guide to video watchers where can they watch a specific show / movie.
 
+# Tech Spec
+## Stacks
+- Firebase (or Heroku + Auth0)
+- GraphQL / Appolo
+- Angular
 
 # Supported Streaming Platforms
 ## Taiwan
