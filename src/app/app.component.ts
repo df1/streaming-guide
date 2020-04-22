@@ -36,8 +36,13 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。',
+    if( document.cookie.search(/accept-cookie/i) === -1 ) {
+      let snackBarRef = this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。',
       '同意', { horizontalPosition: 'right'});
+      snackBarRef.afterDismissed().subscribe(() => {
+        document.cookie = 'accept-cookie=true;';
+      });
+    }
   }
   mobileQuery: MediaQueryList;
 
