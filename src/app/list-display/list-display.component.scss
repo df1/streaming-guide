@@ -1,8 +1,12 @@
+@import '../../styles/variables';
 table {
     width: 100%;
     height: 100%;
     th, td{
         padding: 3px 5px;
+        a{
+            color: mat-color($accent);
+        }
     }
     // column def
     .col-poster {

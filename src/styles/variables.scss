@@ -30,3 +30,4 @@ $theme: mat-dark-theme($primaryPalette, $accentPalette, $warnPalette);
 $primary: map-get($theme, primary);
 $accent: map-get($theme,accent);
 $background: map-get($theme, background);
+$foreground: map-get($theme, foreground);

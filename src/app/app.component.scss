@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import '../styles/variables';
 
 // top toolbar
 mat-toolbar{
@@ -18,8 +18,8 @@ mat-toolbar{
 
     .link{
         &.active-link{
-            background-color: white;
-            color : #c2185a;
+            color: mat-color($primary, default);
+            background-color: mat-color($accent, lighter);
         }
     }
 
@@ -82,8 +82,8 @@ mat-toolbar{
   }
 
 mat-nav-list a{
-    &.active-link {
-        background-color: #6b6b6b;
+    &.active-link, &:focus {
+        background-color: mat-color($accent, darker) !important;
     }
 }
 
