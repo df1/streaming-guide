@@ -61,7 +61,12 @@ export class AppComponent implements OnInit{
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-  exportExcel() {
+
+  closeSidenav(): void {
+    this.sidenav.close();
+  }
+
+  exportExcel(): void {
     /* table id is passed over here */
     let element = document.getElementById('main-data-table');
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);

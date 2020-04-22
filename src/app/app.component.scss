@@ -23,8 +23,8 @@ mat-toolbar{
         }
         &.active-link{
             display: inline-block;
-            color: mat-color($primary, default);
-            background-color: mat-color($accent, lighter);
+            //color: mat-color($primary, default);
+            background-color: mat-color($primary, 600);
         }
     }
 

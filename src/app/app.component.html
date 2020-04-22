@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="snav.toggle()" class="hamburger"><mat-icon>menu</mat-icon></button>
+  <button mat-icon-button (click)="sidenav.toggle()" class="hamburger"><mat-icon>menu</mat-icon></button>
   <span class="title" routerLink="/">楓林晚 </span> &nbsp;
 
   <button mat-button class="link" *ngFor="let item of toolbarMenu" [routerLink]="item.link" routerLinkActive="active-link">
@@ -18,11 +18,14 @@
 
 
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-  <mat-nav-list>
-  <a mat-list-item routerLink="." *ngFor="let nav of menuTree" [routerLink]="nav.link" routerLinkActive="active-link">{{nav.name}}</a>
-  </mat-nav-list>
+  <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <mat-nav-list>
+      <a mat-list-item routerLink="." *ngFor="let nav of menuTree" [routerLink]="nav.link"
+        (click)="closeSidenav()" routerLinkActive="active-link">
+        {{nav.name}}
+      </a>
+    </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
