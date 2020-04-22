@@ -9,9 +9,19 @@ $hamburgerHiddenMargin: 0 16px 0 -64px;
         @content;
     }
 }
+@mixin mobile-down {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
 
 @mixin tablet-up{
     @media (min-width: $breakpoint-tablet){
+        @content;
+    }
+}
+@mixin tablet-down{
+    @media (max-width: $breakpoint-tablet){
         @content;
     }
 }

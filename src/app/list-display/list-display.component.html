@@ -21,25 +21,27 @@
     </td>
     </ng-container>
     <ng-container matColumnDef="poster">
-        <th mat-header-cell *matHeaderCellDef class="col-poster">海報</th>
+        <th mat-header-cell *matHeaderCellDef>海報</th>
         <td mat-cell *matCellDef="let item"> <img style="width:50px;" src="https://image.tmdb.org/t/p/w92{{item.poster_path}}"></td>
     </ng-container>
 
     <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef class="col-title" mat-sort-header>片名</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>片名</th>
         <td mat-cell *matCellDef="let item"> {{item.title}}</td>
     </ng-container>
 
     <ng-container matColumnDef="overview">
-        <th mat-header-cell *matHeaderCellDef class="col-overview">簡介</th>
+        <th mat-header-cell *matHeaderCellDef>簡介</th>
         <td mat-cell *matCellDef="let item">
-            {{item.overview}}
-            <a href="https://www.themoviedb.org/movie/{{item.id}}}/edit?language=zh-TW" target="_blank">貢獻內容</a>
+            <div>
+                {{item.overview}}
+                <a href="https://www.themoviedb.org/movie/{{item.id}}}/edit?language=zh-TW" target="_blank">貢獻內容</a>
+            </div>
         </td>
     </ng-container>
 
     <ng-container matColumnDef="popularity">
-        <th mat-header-cell *matHeaderCellDef class="col-short" mat-sort-header>熱門度</th>
+        <th mat-header-cell *matHeaderCellDef class="column-short" mat-sort-header>熱門度</th>
         <td mat-cell *matCellDef="let item"> {{item.popularity | number: '1.0-0' }}</td>
     </ng-container>
 

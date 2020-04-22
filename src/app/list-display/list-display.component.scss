@@ -9,16 +9,22 @@ table {
         }
     }
     // column def
-    .col-poster {
-        width: 60px;
-    }
-    .col-title {
-        width: 120px;
-    }
-    .col-short {
+    .column-short {
         width: 90px;
     }
-    .col-overview {
-        max-width: 400px;
+    .mat-column-poster {
+        width: 60px;
+    }
+    .mat-column-title {
+        width: 120px;
+    }
+    .mat-column-overview {
+        div {
+            max-height: 76px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
     }
 }

@@ -17,7 +17,12 @@ mat-toolbar{
     }
 
     .link{
+        display: none;
+        @include tablet-up{
+            display: inline-block;
+        }
         &.active-link{
+            display: inline-block;
             color: mat-color($primary, default);
             background-color: mat-color($accent, lighter);
         }
