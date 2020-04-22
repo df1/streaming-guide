@@ -1,4 +1,4 @@
-# Streaming Guide
+# Streaming Guide ![CI](https://github.com/df1/streaming-guide/workflows/CI/badge.svg)
 
 This project is to provide a guide to video watchers where can they watch a specific show / movie.
 
