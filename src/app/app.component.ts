@@ -1,11 +1,9 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import * as XLSX from 'xlsx';
-import { SelectionModel } from '@angular/cdk/collections';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +24,9 @@ export class AppComponent implements OnInit{
   ];
   toolbarMenu = this.menuTree.filter(i=>i.showInToolbar!==false);
   isLoading = false;
+
   constructor(
+    private router: Router,
     private snackBar: MatSnackBar,
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher) {
@@ -36,6 +36,14 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
+    // for Github Page's routing hack with 404.html
+    let routePath = sessionStorage.getItem('routePath');
+    if( routePath ) {
+      sessionStorage.removeItem('routePath');
+      this.router.navigate([routePath]);
+    }
+
+    // gdpr cookie policy
     if( document.cookie.search(/accept-cookie/i) === -1 ) {
       let snackBarRef = this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。',
       '同意', { horizontalPosition: 'right'});
