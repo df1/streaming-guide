@@ -993,6 +993,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 22);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "\u8CA2\u737B\u5167\u5BB9");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
 
@@ -1001,13 +1007,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", item_r108.overview, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", item_r108.overview, " ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "https://www.themoviedb.org/movie/", item_r108.id, "}/edit?language=zh-TW", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
       }
     }
 
     function ListDisplayComponent_th_14_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 23);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "\u71B1\u9580\u5EA6");
 
@@ -1037,7 +1047,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function ListDisplayComponent_tr_16_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 24);
       }
     }
 
@@ -1045,7 +1055,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       if (rf & 1) {
         var _r112 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr", 25);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ListDisplayComponent_tr_17_Template_tr_click_0_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r112);
@@ -1133,7 +1143,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       },
       decls: 18,
       vars: 4,
-      consts: [["id", "main-data-table", "mat-table", "", "matSort", "", 3, "dataSource"], ["matColumnDef", "select"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "poster"], ["mat-header-cell", "", "class", "col-poster", 4, "matHeaderCellDef"], ["matColumnDef", "title"], ["mat-header-cell", "", "class", "col-title", "mat-sort-header", "", 4, "matHeaderCellDef"], ["matColumnDef", "overview"], ["mat-header-cell", "", "class", "col-overview", 4, "matHeaderCellDef"], ["matColumnDef", "popularity"], ["mat-header-cell", "", "class", "col-short", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 3, "click", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], [3, "checked", "indeterminate", "aria-label", "change"], ["mat-cell", ""], [3, "checked", "aria-label", "click", "change"], ["mat-header-cell", "", 1, "col-poster"], [2, "width", "50px", 3, "src"], ["mat-header-cell", "", "mat-sort-header", "", 1, "col-title"], ["mat-header-cell", "", 1, "col-overview"], ["mat-header-cell", "", "mat-sort-header", "", 1, "col-short"], ["mat-header-row", ""], ["mat-row", "", 3, "click"]],
+      consts: [["id", "main-data-table", "mat-table", "", "matSort", "", 3, "dataSource"], ["matColumnDef", "select"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "poster"], ["mat-header-cell", "", "class", "col-poster", 4, "matHeaderCellDef"], ["matColumnDef", "title"], ["mat-header-cell", "", "class", "col-title", "mat-sort-header", "", 4, "matHeaderCellDef"], ["matColumnDef", "overview"], ["mat-header-cell", "", "class", "col-overview", 4, "matHeaderCellDef"], ["matColumnDef", "popularity"], ["mat-header-cell", "", "class", "col-short", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 3, "click", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], [3, "checked", "indeterminate", "aria-label", "change"], ["mat-cell", ""], [3, "checked", "aria-label", "click", "change"], ["mat-header-cell", "", 1, "col-poster"], [2, "width", "50px", 3, "src"], ["mat-header-cell", "", "mat-sort-header", "", 1, "col-title"], ["mat-header-cell", "", 1, "col-overview"], ["target", "_blank", 2, "color", "wheat", 3, "href"], ["mat-header-cell", "", "mat-sort-header", "", 1, "col-short"], ["mat-header-row", ""], ["mat-row", "", 3, "click"]],
       template: function ListDisplayComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "table", 0);
@@ -1166,7 +1176,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ListDisplayComponent_th_11_Template, 2, 0, "th", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, ListDisplayComponent_td_12_Template, 2, 1, "td", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, ListDisplayComponent_td_12_Template, 4, 2, "td", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
 
