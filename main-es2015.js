@@ -148,7 +148,12 @@ class AppComponent {
         this.mobileQuery.addListener(this._mobileQueryListener);
     }
     ngOnInit() {
-        this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。', '同意', { horizontalPosition: 'right' });
+        if (document.cookie.search(/accept-cookie/i) === -1) {
+            let snackBarRef = this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。', '同意', { horizontalPosition: 'right' });
+            snackBarRef.afterDismissed().subscribe(() => {
+                document.cookie = 'accept-cookie=true;';
+            });
+        }
     }
     ngOnDestroy() {
         this.mobileQuery.removeListener(this._mobileQueryListener);

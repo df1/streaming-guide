@@ -330,9 +330,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AppComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。', '同意', {
-            horizontalPosition: 'right'
-          });
+          if (document.cookie.search(/accept-cookie/i) === -1) {
+            var snackBarRef = this.snackBar.open('本網站使用cookies以提昇您的使用體驗及統計。繼續使用本網站表示您同意我們使用cookies。', '同意', {
+              horizontalPosition: 'right'
+            });
+            snackBarRef.afterDismissed().subscribe(function () {
+              document.cookie = 'accept-cookie=true;';
+            });
+          }
         }
       }, {
         key: "ngOnDestroy",
