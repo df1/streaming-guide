@@ -1,0 +1,10 @@
+<!-- this is a frontend hack to make Github Page support routing
+     only needed for our test environment
+     approach: temporarily save the route via sessionStorage -->
+<script type="text/javascript">
+    var path = window.location.pathname.slice(1);
+    if( window.sessionStorage ) {
+        sessionStorage.setItem('routePath', path);
+    }
+    window.location = '/';
+</script>
