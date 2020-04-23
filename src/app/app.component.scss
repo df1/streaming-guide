@@ -1,7 +1,7 @@
 @import '../styles/variables';
 
 // top toolbar
-mat-toolbar{
+mat-toolbar {
     position: fixed;
     top: 0;
     z-index: 3;
@@ -11,17 +11,17 @@ mat-toolbar{
         padding: 10px;
         font-size: 24px;
         cursor: pointer;
-        &:focus{
+        &:focus {
             outline: none;
         }
     }
 
     .link{
         display: none;
-        @include tablet-up{
+        @include tablet-up {
             display: inline-block;
         }
-        &.active-link{
+        &.active-link {
             display: inline-block;
             background-color: mat-color($primary, 600);
             cursor: default;
@@ -29,17 +29,17 @@ mat-toolbar{
     }
 
     // the spacing in the middle
-    .fill-remaining-space{
+    .fill-remaining-space {
         flex: 1;
     }
 
     // toolbar items
-    .toolbar-item{
+    .toolbar-item {
         margin-left: 20px;
         font-size: 14px;
     }
 
-    .selection-field{
+    .selection-field {
         width: 100px;
     }
 

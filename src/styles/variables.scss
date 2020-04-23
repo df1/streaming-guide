@@ -14,12 +14,12 @@ $toolbar-height: 56px;
     }
 }
 
-@mixin tablet-up{
+@mixin tablet-up {
     @media (min-width: $breakpoint-tablet){
         @content;
     }
 }
-@mixin tablet-down{
+@mixin tablet-down {
     @media (max-width: $breakpoint-tablet){
         @content;
     }
