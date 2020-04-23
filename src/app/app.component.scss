@@ -24,6 +24,7 @@ mat-toolbar{
         &.active-link{
             display: inline-block;
             background-color: mat-color($primary, 600);
+            cursor: default;
         }
     }
 
@@ -60,3 +61,41 @@ mat-sidenav {
 mat-sidenav-content {
     padding-top: $toolbar-height;
 }
+mat-nav-list a{
+    &.active-link, &:focus {
+        background-color: mat-color($accent, darker);
+    }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.is-mobile .toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+}
+
+h1.app-name {
+    margin-left: 8px;
+}
+
+.sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+}
+
+.is-mobile .sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+        `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+}
+
+
