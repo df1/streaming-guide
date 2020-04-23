@@ -25,17 +25,13 @@ $toolbar-height: 56px;
     }
 }
 
-
-// angular material theme
 @import "~@angular/material/theming";
-
 $primaryPalette: mat-palette($mat-pink, 700);
 $accentPalette:  mat-palette($mat-blue-grey, A200, A100, A400);
 $warnPalette:    mat-palette($mat-red);
 
 $theme: mat-dark-theme($primaryPalette, $accentPalette, $warnPalette);
-// $theme: mat-light-theme($primaryPalette, $accentPalette, $warnPalette);
-@include angular-material-theme($theme);
+
 $primary: map-get($theme, primary);
 $accent: map-get($theme,accent);
 $background: map-get($theme, background);

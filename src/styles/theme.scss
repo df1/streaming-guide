@@ -1,0 +1,5 @@
+// angular material theme
+@import "~@angular/material/theming";
+@import "variables";
+@include mat-core();
+@include angular-material-theme($theme);
