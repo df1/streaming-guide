@@ -286,6 +286,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/paginator.js");
 /* harmony import */ var _main_page_main_page_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./main-page/main-page.component */ "./src/app/main-page/main-page.component.ts");
 /* harmony import */ var _list_display_list_display_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./list-display/list-display.component */ "./src/app/list-display/list-display.component.ts");
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/__ivy_ngcc__/fesm2015/service-worker.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 
 
 
@@ -304,6 +306,9 @@ __webpack_require__.r(__webpack_exports__);
 // import {MatTabsModule} from '@angular/material/tabs';
 // import {MatExpansionModule} from '@angular/material/expansion';
 // import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+
+
 
 
 
@@ -367,7 +372,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _angular_material_table__WEBPACK_IMPORTED_MODULE_26__["MatTableModule"],
             _angular_material_sort__WEBPACK_IMPORTED_MODULE_27__["MatSortModule"],
             _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_8__["MatCheckboxModule"],
-            _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__["MatPaginatorModule"]
+            _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__["MatPaginatorModule"],
+            _angular_service_worker__WEBPACK_IMPORTED_MODULE_31__["ServiceWorkerModule"].register('ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_32__["environment"].production })
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _main_page_main_page_component__WEBPACK_IMPORTED_MODULE_29__["MainPageComponent"],
@@ -407,7 +413,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _angular_material_table__WEBPACK_IMPORTED_MODULE_26__["MatTableModule"],
         _angular_material_sort__WEBPACK_IMPORTED_MODULE_27__["MatSortModule"],
         _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_8__["MatCheckboxModule"],
-        _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__["MatPaginatorModule"]] }); })();
+        _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__["MatPaginatorModule"], _angular_service_worker__WEBPACK_IMPORTED_MODULE_31__["ServiceWorkerModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -452,7 +458,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _angular_material_table__WEBPACK_IMPORTED_MODULE_26__["MatTableModule"],
                     _angular_material_sort__WEBPACK_IMPORTED_MODULE_27__["MatSortModule"],
                     _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_8__["MatCheckboxModule"],
-                    _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__["MatPaginatorModule"]
+                    _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__["MatPaginatorModule"],
+                    _angular_service_worker__WEBPACK_IMPORTED_MODULE_31__["ServiceWorkerModule"].register('ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_32__["environment"].production })
                 ],
                 providers: [],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
