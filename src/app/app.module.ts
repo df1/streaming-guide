@@ -41,6 +41,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ListDisplayComponent } from './list-display/list-display.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,8 @@ import { ListDisplayComponent } from './list-display/list-display.component';
     MatTableModule,
     MatSortModule,
     MatCheckboxModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
