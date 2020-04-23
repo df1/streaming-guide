@@ -1,8 +1,7 @@
 // rwd variables
 $breakpoint-mobile: 481px;
 $breakpoint-tablet: 768px;
-$hamburgerShownMargin: 0 8px 0 0;
-$hamburgerHiddenMargin: 0 16px 0 -64px;
+$toolbar-height: 56px;
 
 @mixin mobile-up {
     @media (min-width: $breakpoint-mobile) {
