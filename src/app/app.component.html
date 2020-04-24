@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenav.toggle()" class="hamburger"><mat-icon>menu</mat-icon></button>
+  <button mat-icon-button (click)="sidenav.toggle()" class="hamburger" aria-label="menu"><mat-icon>menu</mat-icon></button>
   <span class="title" routerLink="/">楓林晚 </span> &nbsp;
 
   <button mat-button class="link" *ngFor="let item of toolbarMenu" [routerLink]="item.link" routerLinkActive="active-link">
@@ -7,10 +7,10 @@
   </button>
   <span class="fill-remaining-space"></span>
 
-  <!-- <button mat-icon-button class="toolbar-item" matTooltip="Export Excel" (click)="exportExcel()">
+  <!-- <button mat-icon-button class="toolbar-item" matTooltip="Export Excel" (click)="exportExcel()" aria-label="Export">
     <mat-icon>grid_on</mat-icon>
   </button> -->
-  <button mat-icon-button class="toolbar-item" matTooltip="Donate">
+  <button mat-icon-button class="toolbar-item" matTooltip="Donate" aria-label="Donate">
     <mat-icon>insert_emoticon</mat-icon>
   </button>
 </mat-toolbar>
