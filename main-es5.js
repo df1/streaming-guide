@@ -408,7 +408,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       },
       decls: 20,
       vars: 5,
-      consts: [["color", "primary"], ["mat-icon-button", "", 1, "hamburger", 3, "click"], ["routerLink", "/", 1, "title"], ["mat-button", "", "class", "link", "routerLinkActive", "active-link", 3, "routerLink", 4, "ngFor", "ngForOf"], [1, "fill-remaining-space"], ["mat-icon-button", "", "matTooltip", "Donate", 1, "toolbar-item"], ["mode", "indeterminate", 4, "ngIf"], [1, "sidenav-container"], ["fixedTopGap", "56", 3, "mode", "fixedInViewport"], ["sidenav", ""], ["mat-list-item", "", "routerLink", ".", "routerLinkActive", "active-link", 3, "routerLink", "click", 4, "ngFor", "ngForOf"], ["mat-button", "", "routerLinkActive", "active-link", 1, "link", 3, "routerLink"], ["mode", "indeterminate"], ["mat-list-item", "", "routerLink", ".", "routerLinkActive", "active-link", 3, "routerLink", "click"]],
+      consts: [["color", "primary"], ["mat-icon-button", "", "aria-label", "menu", 1, "hamburger", 3, "click"], ["routerLink", "/", 1, "title"], ["mat-button", "", "class", "link", "routerLinkActive", "active-link", 3, "routerLink", 4, "ngFor", "ngForOf"], [1, "fill-remaining-space"], ["mat-icon-button", "", "matTooltip", "Donate", "aria-label", "Donate", 1, "toolbar-item"], ["mode", "indeterminate", 4, "ngIf"], [1, "sidenav-container"], ["fixedTopGap", "56", 3, "mode", "fixedInViewport"], ["sidenav", ""], ["mat-list-item", "", "routerLink", ".", "routerLinkActive", "active-link", 3, "routerLink", "click", 4, "ngFor", "ngForOf"], ["mat-button", "", "routerLinkActive", "active-link", 1, "link", 3, "routerLink"], ["mode", "indeterminate"], ["mat-list-item", "", "routerLink", ".", "routerLinkActive", "active-link", 3, "routerLink", "click"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           var _r89 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -1616,7 +1616,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function MainPageComponent_img_13_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "img", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "img", 25);
       }
 
       if (rf & 2) {
@@ -1716,7 +1716,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-main-page"]],
       decls: 117,
       vars: 9,
-      consts: [[1, "background", "hero"], ["id", "intro"], [1, "hero-logo"], ["src", "assets/images/logo.svg", "alt", "Logo", "width", "250", "height", "250"], [1, "homepage-container"], [1, "hero-headline", "no-toc"], [1, "hero-subline"], [1, "hero-providers"], ["class", "provider", 3, "src", "alt", "matTooltip", 4, "ngFor", "ngForOf"], [1, "home-rows"], ["layout", "row", "layout-xs", "column", 1, "home-row", "homepage-container"], [1, "text-container"], [1, "text-block"], [1, "text-headline"], [1, "text-body"], ["target", "_blank", 3, "href"], [1, "grid-fluid"], [1, "footer-block"], ["href", "//themoviedb.org", "target", "_blank"], ["href", "//www.ptt.cc/bbs/", "target", "_blank"], ["href", "//www.imdb.com/", "target", "_blank"], ["href", "//www.rottentomatoes.com/", "target", "_blank"], ["href", "//ocf.tw/about/", "target", "_blank"], ["href", "//angular.io", "target", "_blank"], [1, "provider", 3, "src", "alt", "matTooltip"]],
+      consts: [[1, "background", "hero"], ["id", "intro"], [1, "hero-logo"], ["src", "assets/images/logo.svg", "alt", "Logo", "width", "250", "height", "250"], [1, "homepage-container"], [1, "hero-headline", "no-toc"], [1, "hero-subline"], [1, "hero-providers"], ["class", "provider", 3, "src", "alt", "matTooltip", 4, "ngFor", "ngForOf"], [1, "home-rows"], ["layout", "row", "layout-xs", "column", 1, "home-row", "homepage-container"], [1, "text-container"], [1, "text-block"], [1, "text-headline"], [1, "text-body"], ["target", "_blank", 3, "href"], [1, "grid-fluid"], [1, "footer-block"], ["rel", "noreferrer", "href", "//themoviedb.org", "target", "_blank"], ["rel", "noreferrer", "href", "//www.ptt.cc/bbs/", "target", "_blank"], ["rel", "noreferrer", "href", "//www.imdb.com/", "target", "_blank"], ["rel", "noreferrer", "href", "//www.rottentomatoes.com/", "target", "_blank"], ["rel", "noreferrer", "target", "_blank", 3, "href"], ["rel", "noreferrer", "href", "//ocf.tw/about/", "target", "_blank"], ["href", "//angular.io", "target", "_blank"], [1, "provider", 3, "src", "alt", "matTooltip"]],
       template: function MainPageComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "header");
@@ -1977,7 +1977,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "a", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "a", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, "\u5E38\u898B\u554F\u984C (FAQ)");
 
@@ -1987,7 +1987,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "a", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "a", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, "\u7248\u6B0A\u8072\u660E");
 
@@ -1997,7 +1997,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "a", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "a", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](90, "\u4F7F\u7528\u689D\u6B3E");
 
@@ -2007,7 +2007,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "a", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "a", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](93, "\u96B1\u79C1\u6B0A\u653F\u7B56");
 
@@ -2031,7 +2031,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "a", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "a", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100, "\u554F\u984C\u56DE\u5831/\u529F\u80FD\u5EFA\u8B70");
 
@@ -2041,7 +2041,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](101, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "a", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "a", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](103, "\u5354\u52A9\u958B\u767C (Github)");
 
@@ -2051,7 +2051,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "a", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "a", 23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](106, "\u652F\u6301\u958B\u653E\u6E90\u78BC");
 
@@ -2061,7 +2061,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](107, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "a", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "a", 22);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](109, "\u8D0A\u52A9\u6211");
 
@@ -2079,7 +2079,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](111, "This website is built with Angular. This page reuses part of the styles from ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "a", 23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "a", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, "angular.io");
 
