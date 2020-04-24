@@ -8,26 +8,7 @@
             <div class="hero-headline no-toc">支持正版，<br>才有更棒的作品。</div>
             <div class="hero-subline">在這裡找尋您想看的影劇的所有合法片源</div>
             <div class="hero-providers">
-                <img src="assets/images/providers/1.jpg" alt="Netflix" matTooltip="Netflix" class="provider">
-                <img src="assets/images/providers/2.jpg" alt="LINE TV" matTooltip="LINE TV" class="provider">
-                <img src="assets/images/providers/3.jpg" alt="愛奇藝台灣站" matTooltip="愛奇藝台灣站" class="provider">
-                <img src="assets/images/providers/4.jpg" alt="HBO GO" matTooltip="HBO GO" class="provider">
-                <img src="assets/images/providers/5.jpg" alt="KKTV" matTooltip="KKTV" class="provider">
-                <img src="assets/images/providers/6.jpg" alt="Apple TV+" matTooltip="Apple TV+" class="provider">
-                <img src="assets/images/providers/7.jpg" alt="GagaOOLala" matTooltip="GagaOOLala" class="provider">
-                <img src="assets/images/providers/8.jpg" alt="iTunes" matTooltip="iTunes" class="provider">
-                <img src="assets/images/providers/9.jpg" alt="YouTube" matTooltip="YouTube" class="provider">
-                <img src="assets/images/providers/10.jpg" alt="Google Play電影" matTooltip="Google Play電影" class="provider">
-                <img src="assets/images/providers/11.jpg" alt="CATCHPLAY+" matTooltip="CATCHPLAY+" class="provider">
-                <img src="assets/images/providers/12.jpg" alt="friDay影音" matTooltip="friDay影音" class="provider">
-                <img src="assets/images/providers/13.jpg" alt="Hami Video" matTooltip="Hami Video" class="provider">
-                <img src="assets/images/providers/14.jpg" alt="公視+" matTooltip="公視+" class="provider">
-                <img src="assets/images/providers/15.jpg" alt="LiTV立視線上影視" matTooltip="LiTV立視線上影視" class="provider">
-                <img src="assets/images/providers/16.jpg" alt="myVideo" matTooltip="myVideo" class="provider">
-                <img src="assets/images/providers/17.jpg" alt="Vidol影音" matTooltip="Vidol影音" class="provider">
-                <img src="assets/images/providers/18.jpg" alt="WeTV" matTooltip="WeTV" class="provider">
-                <img src="assets/images/providers/19.jpg" alt="四季線上影視" matTooltip="四季線上影視" class="provider">
-                <img src="assets/images/providers/20.jpg" alt="酷瞧" matTooltip="酷瞧" class="provider">
+                <img *ngFor="let i of PROVIDER_LIST" src="assets/images/providers/{{i.id}}.jpg" [alt]="i.name" [matTooltip]="i.name" class="provider">
             </div>
         </div>
     </section>
@@ -46,7 +27,7 @@
                 <div class="text-block">
                     <div class="text-headline">看正版不該這麼難</div>
                     <p class="text-body">
-                        楓林網最好用的地方是甚麼？只要搜尋劇名「 線上看 」，一點開馬上就可以看劇！很可惜他是<del>盜版</del>的。如果正版的串流平台也可以這麼方便，那就太好了。
+                        <em>楓林網</em> 最好用的地方是甚麼？只要搜尋劇名「 線上看 」，一點開馬上就可以看劇！很可惜他是<del>盜版</del>的。如果正版的串流平台也可以這麼方便，那就太好了。
                     </p>
                 </div>
             </div>
@@ -66,7 +47,7 @@
             <div class="text-container">
                 <div class="text-block">
                     <div class="text-headline">最合鄉民的胃口</div>
-                    <p class="text-body">IMDb分數高一定好看？PTT好雷比例才最反映台灣鄉民的胃口！讓網路爬蟲幫您做分析，以免花了時間看完，評論卻只有「我剛剛到底看了甚麼😱」。</p>
+                    <p class="text-body">IMDb分數高一定好看？PTT好雷比例才最反映正港台灣鄉民的口味！讓網路爬蟲幫您做分析，以免花了時間看完，評論卻只有「我剛剛到底看了甚麼😱」。</p>
                 </div>
             </div>
         </div>
@@ -76,7 +57,7 @@
                 <div class="text-block">
                     <div class="text-headline">做個堂堂正正的台灣人</div>
                     <p class="text-body">提升公民素質需要你我的努力，別不小心破壞了台灣最美的風景！讓我們落實使用者付費的觀念，讓最賣座的電影在台灣優先上映，讓創作者們繼續努力為我們做出更好的作品。</p>
-                    <p class="text-body">這個網站是抱著以上精神努力開發，非營利性質且無廣告。然而讓它繼續營運下去需要大量時間及金錢成本。如果您喜歡，且經濟尚有餘裕，歡迎贊助我。</p>
+                    <p class="text-body">這個網站是抱著以上精神努力開發，非營利性質且無廣告。然而讓它繼續營運下去需要大量時間及金錢成本。如果您喜歡，且經濟尚有餘裕，歡迎<a [href]="SPONSOR_URL" target="_blank">贊助我</a>。</p>
                 </div>
             </div>
         </div>
@@ -96,20 +77,22 @@
         <div class="footer-block">
             <h3>關於本站</h3>
             <ul>
-                <li><a href="/">常見問題 (FAQ)</a></li>
-                <li><a href="/">版權聲明</a></li>
-                <li><a href="/">使用條款</a></li>
+                <li><a href="{{REPO_URL}}/blob/master/doc/FAQ.md" target="_blank">常見問題 (FAQ)</a></li>
+                <li><a href="{{REPO_URL}}/blob/master/doc/COPYRIGHT_DISCLAIMER.md" target="_blank">版權聲明</a></li>
+                <li><a href="{{REPO_URL}}/blob/master/doc/TERMS_AND_CONDITIONS.md" target="_blank">使用條款</a></li>
+                <li><a href="{{REPO_URL}}/blob/master/doc/PRIVACY_POLICY.md" target="_blank">隱私權政策</a></li>
             </ul>
         </div>
         <div class="footer-block">
             <h3>貢獻</h3>
             <ul>
-                <li><a href="//github.com/df1/streaming-guide/issues" target="_blank">問題回報/功能建議</a></li>
-                <li><a href="//github.com/df1/streaming-guide" target="_blank">協助開發(Github)</a></li>
-                <li><a href="/">贊助我</a></li>
+                <li><a href="{{REPO_URL}}/issues" target="_blank">問題回報/功能建議</a></li>
+                <li><a href="{{REPO_URL}}" target="_blank">協助開發 (Github)</a></li>
+                <li><a href="//ocf.tw/about/" target="_blank">支持開放源碼</a></li>
+                <li><a href="{{SPONSOR_URL}}" target="_blank">贊助我</a></li>
             </ul>
         </div>
     </div>
-    <p>This website is built with Angular. This page's style reuses the styles from <a href="//angular.io">angular.io</a> </p>
+    <p>This website is built with Angular. This page reuses part of the styles from <a href="//angular.io" target="_blank">angular.io</a>.</p>
     <p>Copyright 8maple.us &copy; 2020. Code licensed under MIT License.</p>
 </footer>

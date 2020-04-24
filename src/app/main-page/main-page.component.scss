@@ -29,10 +29,11 @@ header {
     z-index: -1;
 
     @include mobile-down {
-        min-height: 300px;
-        max-height: 486px;
+        min-height: 500px;
+        max-height: 586px;
         padding-top: 40px;
         transform: none;
+        top: -145px;
     }
 
     .hero-title {
@@ -241,12 +242,22 @@ div[layout=row]{
     }
   }
 }
+
 hr {
     border: none;
     background: mat-color($accent, default, 0.15);
     height: 1px;
 }
 
+a {
+    color: mat-color($foreground, text);
+    &:hover {
+        color: mat-color($foreground, text);
+    }
+    &:visited {
+        color: mat-color($foreground, text);
+    }
+}
 
 // footer
 footer {
@@ -261,63 +272,53 @@ footer {
         margin: 0;
         font-size: .9em;
     }
-}
 
-.footer-block {
-    margin: 0 24px;
-    vertical-align: top;
-}
-
-a {
-    text-decoration: none;
-    z-index: 20;
-    position: relative;
-    color: mat-color($foreground, text);
-
-    &:hover {
-        text-decoration: underline;
-        color: mat-color($foreground, text);
+    .footer-block {
+        margin: 0 24px;
+        vertical-align: top;
     }
 
-    &:visited {
+    a {
         text-decoration: none;
-        color: mat-color($foreground, text);
-    }
-
-}
-
-h3 {
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 8px 0 12px;
-}
-
-
-div.grid-fluid {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    margin: 0 0 30px;
-
-    ul {
-        list-style-position: inside;
-        padding: 0px;
-        margin: 0px;
-
-        li {
-            list-style-type: none;
-            padding: 4px 0;
-            text-align: left;
+        &:hover {
+            text-decoration: underline;
         }
     }
 
-    @include mobile-down{
-        flex-direction: column;
-        .footer-block {
-            margin: 8px 24px;
+    h3 {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 8px 0 12px;
+    }
+
+
+    div.grid-fluid {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        margin: 0 0 30px;
+
+        ul {
+            list-style-position: inside;
+            padding: 0px;
+            margin: 0px;
+
+            li {
+                list-style-type: none;
+                padding: 4px 0;
+                text-align: left;
+            }
+        }
+
+        @include mobile-down{
+            flex-direction: column;
+            .footer-block {
+                margin: 8px 24px;
+            }
         }
     }
+
 }
