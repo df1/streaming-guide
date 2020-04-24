@@ -247,3 +247,73 @@ hr {
     background: mat-color($accent, default, 0.15);
     height: 1px;
 }
+
+
+// footer
+footer {
+    background-color: mat-color($primary);
+    position: relative;
+    flex: 1;
+    padding: 48px;
+    z-index: 0;
+    font-weight: 300;
+}
+
+.footer-block {
+    margin: 0 24px;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    z-index: 20;
+    position: relative;
+    color: mat-color($foreground, text);
+
+    &:hover {
+        text-decoration: underline;
+        color: mat-color($foreground, text);
+    }
+
+    &:visited {
+        text-decoration: none;
+        color: mat-color($foreground, text);
+    }
+
+}
+
+h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 8px 0 12px;
+}
+
+
+div.grid-fluid {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin: 0 0 40px;
+
+    ul {
+        list-style-position: inside;
+        padding: 0px;
+        margin: 0px;
+
+        li {
+            list-style-type: none;
+            padding: 4px 0;
+            text-align: left;
+        }
+    }
+
+    @include mobile-down{
+        flex-direction: column;
+        .footer-block {
+            margin: 8px 24px;
+        }
+    }
+}

@@ -25,6 +25,10 @@ $toolbar-height: 56px;
     }
 }
 
+// angular material theming
+// when changing this, also need to change the followings:
+// - `index.html`'s meta theme-color
+// - `manifest.webmanifest`'s theme_color
 @import "~@angular/material/theming";
 $primaryPalette: mat-palette($mat-pink, 700);
 $accentPalette:  mat-palette($mat-blue-grey, A200, A100, A400);
