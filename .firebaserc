@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "our-velocity-273817"
+  },
+  "targets": {
+    "our-velocity-273817": {
+      "hosting": {
+        "streaming-guide": [
+          "our-velocity-273817"
+        ]
+      }
+    }
   }
 }
