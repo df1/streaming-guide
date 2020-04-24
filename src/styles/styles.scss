@@ -7,8 +7,7 @@ html, body { height: 100%; }
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: mat-color($primary);
-    // background-color: mat-color($background, background);
+    background-color: mat-color($background, background);
 }
 
 /* cutsom scrrollbars */
