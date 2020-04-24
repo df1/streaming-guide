@@ -21,12 +21,11 @@ header {
     align-items: center;
     position: absolute;
     width: 100%;
-    min-height: 260px;
+    min-height: 380px;
     box-sizing: border-box;
-    padding: 48px 48px 32px;
     overflow: hidden;
     transform: skewY(8deg);
-    transform-origin: 100%;
+    transform-origin: 140%;
     z-index: -1;
 
     @include mobile-down {
@@ -254,9 +253,13 @@ footer {
     background-color: mat-color($primary);
     position: relative;
     flex: 1;
-    padding: 48px;
+    padding: 36px;
     z-index: 0;
     font-weight: 300;
+    p {
+        text-align: center;
+        margin: 0;
+    }
 }
 
 .footer-block {
@@ -296,7 +299,7 @@ div.grid-fluid {
     display: flex;
     justify-content: center;
     text-align: left;
-    margin: 0 0 40px;
+    margin: 0 0 30px;
 
     ul {
         list-style-position: inside;
