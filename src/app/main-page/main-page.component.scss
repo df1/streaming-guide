@@ -166,14 +166,6 @@ section#intro {
 
 // article
 div[layout=row]{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-
-    @media (max-width: 480px) {
-      display: block;
-  }
 }
 
 .layout-row {
@@ -183,64 +175,56 @@ div[layout=row]{
 .home-rows {
     overflow: hidden;
     padding: 0 32px;
-    @media (max-width: 600px) {
+    @include mobile-down {
       margin: 0;
     }
 }
 
 .home-row {
-  max-width: 920px;
-  margin: 32px auto;
+    max-width: 920px;
+    margin: 32px auto;
 
-  .promo-img-container, .text-container {
-    max-width: 50%;
-
-    @media(max-width: 480px) {
-      max-width: 100%;
-      text-align: center;
-
-      &:nth-child(even) {
-        flex-direction: column-reverse;
-      }
-    }
-  }
-
-  .text-block {
-    padding-right: 15%;
-
-    @media(max-width: 600px) {
-      padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    @include mobile-down {
+        flex-direction: column;
+        .promo-img-container{
+            order: -1;
+        }
     }
 
-    .text-headline {
-        font-size: 20px;
-        font-weight: 700;
-        color: mat-color($accent);
-        margin-top: 10px;
-        text-transform: uppercase;
-    }
-  }
-
-  .promo-img-container {
-
-    img {
-      max-width: 90% !important;
-    }
-
-    p {
-      margin: 0 20px;
+    .promo-img-container, .text-container {
+        max-width: 50%;
+        @include mobile-down {
+            max-width: 100%;
+            text-align: center;
+        }
+        img {
+            max-width: 90% !important;
+            @include mobile-down {
+                max-width: 100%;
+                float: initial !important;
+            }
+        }
     }
 
-    img {
-      max-width: 90%;
+    .text-block {
+        padding-right: 15%;
 
+        @include mobile-down {
+            padding: 0;
+        }
 
-      @media (max-width: 599px) {
-        max-width: 100%;
-        float: initial !important;
-      }
+        .text-headline {
+            font-size: 20px;
+            font-weight: 700;
+            color: mat-color($accent);
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
     }
-  }
 }
 
 hr {
