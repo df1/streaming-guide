@@ -3,10 +3,11 @@
 // top toolbar
 mat-toolbar {
     position: fixed;
-    top: 0;
     z-index: 3;
     padding-left: 10px;
-    height: $toolbar-height !important;
+    padding-top: $toolbar-height;
+    top: -$toolbar-height;
+    height: $toolbar-height+$toolbar-height !important;
     .title{
         padding: 10px;
         font-size: 24px;
