@@ -6,9 +6,11 @@
         </div>
         <div class="homepage-container">
             <div class="hero-headline no-toc">支持正版，<br>才有更棒的作品。</div>
-            <div class="hero-subline">在這裡找尋您想看的影劇的所有合法片源</div>
+            <div class="hero-subline">在這裡找尋您想看的所有影劇合法片源</div>
             <div class="hero-providers">
-                <img *ngFor="let i of PROVIDER_LIST" src="assets/images/providers/{{i.id}}.jpg" [alt]="i.name" [matTooltip]="i.name" class="provider">
+                <img *ngFor="let i of PROVIDER_LIST" src="assets/images/providers/{{i.id}}.jpg"
+                    [alt]="i.name" [matTooltip]="i.name" class="provider">
+                <div class="mobile-cover"></div>
             </div>
         </div>
     </section>
@@ -27,7 +29,7 @@
                 <div class="text-block">
                     <div class="text-headline">看正版不該這麼難</div>
                     <p class="text-body">
-                        <em>楓林網</em> 最好用的地方是甚麼？只要搜尋劇名「 線上看 」，一點開馬上就可以看劇！很可惜他是<del>盜版</del>的。如果正版的串流平台也可以這麼方便，那就太好了。
+                        <em>楓林網</em> 最好用的地方是甚麼？只要搜尋劇名「 線上看 」，一點開馬上就可以看劇！可惜他是<del>盜版</del>的。如果正版的串流平台也可以這麼方便，那就太好了。
                     </p>
                 </div>
             </div>
@@ -37,7 +39,7 @@
             <div class="text-container">
                 <div class="text-block">
                     <div class="text-headline">看正版不該這麼花錢</div>
-                    <p class="text-body">訂閱一個線上串流平台會員，每月花費大約 $150 TWD 起跳，其實相當划算。「如果我想看的影劇分散在不同平台，豈不要花 $150 * N 來訂閱好幾個平台？」</p>
+                    <p class="text-body">訂閱一個線上串流平台會員，每月花費僅約 $150 TWD 起跳。「如果我想看的影劇分散在不同平台，豈不要花 $150 * N 來訂閱好幾個平台？」</p>
                     <p class="text-body">別擔心，我們幫您打造最適合您的串流方案。在「我的片單」功能裡，把想看的影劇加入您的片單，系統幫您評估怎樣訂閱最划算。(coming soon)</p>
                 </div>
             </div>
@@ -57,7 +59,7 @@
             <div class="text-container">
                 <div class="text-block">
                     <div class="text-headline">最合鄉民的胃口</div>
-                    <p class="text-body">IMDb分數高一定好看？PTT好雷比例才最反映正港台灣鄉民的口味！讓網路爬蟲幫您做分析，以免花了時間看完，評論卻只有「我剛剛到底看了甚麼😱」。</p>
+                    <p class="text-body">電影好不好看只能參考IMDb？PTT好雷比例才最反映正港台灣鄉民的口味！讓鄉民幫您做分析，以免花了時間看完，評論卻只有「我剛剛到底看了甚麼😱」。</p>
                 </div>
             </div>
         </div>

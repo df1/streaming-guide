@@ -120,10 +120,19 @@ section#intro {
     .hero-providers{
         margin-bottom: 20px;
         overflow: hidden;
-
+        position: relative;
         @include tablet-down {
             padding: 0 10px;
             text-align: center;
+        }
+        .mobile-cover {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            @include tablet-up {
+                display: none;
+            }
         }
         img.provider {
             width: 50px;
