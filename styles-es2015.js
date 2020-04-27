@@ -369,7 +369,7 @@ if (content.locals) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 3:
 /*!**************************************************************!*\
   !*** multi ./src/styles/theme.scss ./src/styles/styles.scss ***!
   \**************************************************************/
@@ -382,5 +382,5 @@ module.exports = __webpack_require__(/*! /home/runner/work/streaming-guide/strea
 
 /***/ })
 
-},[[6,"runtime"]]]);
+},[[3,"runtime"]]]);
 //# sourceMappingURL=styles-es2015.js.map
