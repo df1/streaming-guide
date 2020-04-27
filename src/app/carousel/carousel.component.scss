@@ -1,0 +1,40 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 6000px;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    &.prev-btn {
+        left: 0;
+    }
+    &.next-btn {
+        right: 0;
+    }
+}
+.paginator {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    mat-icon {
+        font-size: 14px;
+        opacity: .5;
+        transition: opacity .4s;
+        cursor: pointer;
+        &.active {
+            opacity: 1;
+        }
+    }
+}

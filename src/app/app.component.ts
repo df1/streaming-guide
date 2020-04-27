@@ -17,10 +17,10 @@ export class AppComponent implements OnInit{
     { name: '首頁', link:'index', showInToolbar: false },
     { name: '電影', link:'movies' },
     { name: '台劇', link:'taiwan' },
-    { name: '美劇', link:'usa' },
-    { name: '陸劇', link:'china' },
     { name: '日劇', link:'japan' },
     { name: '韓劇', link:'korea' },
+    { name: '美劇', link:'usa' },
+    { name: '陸劇', link:'china' },
   ];
   toolbarMenu = this.menuTree.filter(i=>i.showInToolbar!==false);
   isLoading = false;

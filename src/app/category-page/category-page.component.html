@@ -1,0 +1,19 @@
+<div class="container">
+    <app-carousel>
+        <ng-container *ngFor="let item of items;">
+            <ng-container *carouselItem>
+            <div class="item"
+                [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w1000_and_h563_face'+item.backdrop_path+')'">
+                <div class="item-content">
+                    <div class="poster">
+                        <img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster">
+                    </div>
+                    <div class="title">{{item.title}}</div>
+                </div>
+            </div>
+            </ng-container>
+        </ng-container>
+    </app-carousel>
+</div>
+
+<h2>熱門電影</h2>

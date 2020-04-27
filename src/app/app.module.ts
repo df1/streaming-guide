@@ -43,12 +43,19 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ListDisplayComponent } from './list-display/list-display.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CategoryPageComponent } from './category-page/category-page.component';
+import { CarouselItemDirective, CarouselItemElement } from './carousel/carousel-item.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    ListDisplayComponent
+    ListDisplayComponent,
+    CarouselComponent,
+    CarouselItemDirective,
+    CarouselItemElement,
+    CategoryPageComponent
   ],
   imports: [
     // MatDatepickerModule,
