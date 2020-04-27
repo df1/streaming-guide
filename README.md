@@ -4,7 +4,7 @@ This project is to provide a guide to video watchers where can they watch a spec
 
 # Tech Spec
 ## Stacks
-- Firebase (or Heroku + Auth0)
+- Firebase (or Heroku + Auth0) (or Repl.it + Repl Auth)
 - GraphQL / Appolo
 - Angular
 
