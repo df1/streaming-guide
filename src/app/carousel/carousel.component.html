@@ -1,14 +1,14 @@
 <section class="carousel-wrapper" [ngStyle]="carouselWrapperStyle">
     <ul class="carousel-inner" #carousel>
-        <li *ngFor="let item of items" class="carousel-item">
+        <li *ngFor="let item of items" class="carousel-item" (swipeleft)="next()" (swiperight)="prev()">
             <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
         </li>
     </ul>
 </section>
-<button mat-icon-button *ngIf="showControls" class="prev-btn" aria-label="previous" (click)="prev()">
+<button mat-icon-button *ngIf="showControls" class="prev-btn" aria-label="previous" (click)="prev(true)">
     <mat-icon>keyboard_arrow_left</mat-icon>
 </button>
-<button mat-icon-button *ngIf="showControls" class="next-btn" aria-label="next" (click)="next()">
+<button mat-icon-button *ngIf="showControls" class="next-btn" aria-label="next" (click)="next(true)">
     <mat-icon>keyboard_arrow_right</mat-icon>
 </button>
 <div class="paginator">

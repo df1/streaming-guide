@@ -61,6 +61,7 @@ mat-sidenav {
 }
 mat-sidenav-content {
     padding-top: $toolbar-height;
+    overflow-x: hidden !important;
 }
 mat-nav-list a{
     &.active-link, &:focus {

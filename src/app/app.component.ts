@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
-import * as XLSX from 'xlsx';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -53,9 +52,6 @@ export class AppComponent implements OnInit{
     }
   }
   mobileQuery: MediaQueryList;
-
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-
   private _mobileQueryListener: () => void;
 
   ngOnDestroy(): void {
@@ -64,18 +60,5 @@ export class AppComponent implements OnInit{
 
   closeSidenav(): void {
     this.sidenav.close();
-  }
-
-  exportExcel(): void {
-    /* table id is passed over here */
-    let element = document.getElementById('main-data-table');
-    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
-
-    /* generate workbook and add the worksheet */
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Exported Data');
-
-    /* save to file */
-    XLSX.writeFile(wb, `${this.title}-${new Date().toISOString().split('T')[0]}.xlsx` );
   }
 }

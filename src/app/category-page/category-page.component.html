@@ -1,12 +1,12 @@
-<div class="container">
+<header>
     <app-carousel>
-        <ng-container *ngFor="let item of items;">
+        <ng-container *ngFor="let item of items.slice(0,7)">
             <ng-container *carouselItem>
             <div class="item"
                 [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w1000_and_h563_face'+item.backdrop_path+')'">
                 <div class="item-content">
                     <div class="poster">
-                        <img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster">
+                        <img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
                     </div>
                     <div class="title">{{item.title}}</div>
                 </div>
@@ -14,6 +14,25 @@
             </ng-container>
         </ng-container>
     </app-carousel>
-</div>
+</header>
 
-<h2>熱門電影</h2>
+<article>
+    <h2>熱門選擇</h2>
+    <div class="cardholder">
+        <mat-card *ngFor="let item of items.slice(7)">
+            <img mat-card-image [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
+            <mat-card-header>
+                <mat-card-title>{{item.title}}</mat-card-title>
+                <mat-card-subtitle>{{item.original_title}}</mat-card-subtitle>
+            </mat-card-header>
+            <!-- <mat-card-content>
+                <p>{{item.overview}}</p>
+            </mat-card-content> -->
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</article>
+

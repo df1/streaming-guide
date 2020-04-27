@@ -1,6 +1,7 @@
-import { Component, OnInit, AfterViewInit, ContentChildren, QueryList, ViewChildren, ElementRef, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ContentChildren, QueryList, ViewChildren, ElementRef, ViewChild, Input, HostListener } from '@angular/core';
 import { CarouselItemDirective, CarouselItemElement } from './carousel-item.directive';
 import { AnimationPlayer, AnimationFactory, animate, style, AnimationBuilder } from '@angular/animations';
+import 'hammerjs';
 
 @Component({
   selector: 'app-carousel',
@@ -32,18 +33,18 @@ export class CarouselComponent implements AfterViewInit {
     this.player.play();
   }
 
-  next() {
-    if (this.currentSlide + 1 === this.items.length) {
-      this.currentSlide = 0;
+  next(infiniteNext: boolean = false ) {
+    if (this.currentSlide + 1 === this.items.length && infiniteNext !== true) {
+      return;
     } else {
       this.currentSlide = (this.currentSlide + 1) % this.items.length;
     }
     this.playPageAnimation();
   }
 
-  prev() {
-    if (this.currentSlide === 0) {
-      this.currentSlide = this.items.length - 1;
+  prev(infinitePrev: boolean = false ) {
+    if (this.currentSlide === 0 && infinitePrev !== true ) {
+      return;
     } else {
       this.currentSlide = ((this.currentSlide - 1) + this.items.length) % this.items.length;
     }
@@ -55,14 +56,18 @@ export class CarouselComponent implements AfterViewInit {
     this.playPageAnimation();
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.ngAfterViewInit();
+    this.playPageAnimation();
+  }
+
   constructor(private builder: AnimationBuilder) {
   }
 
   ngAfterViewInit() {
       this.itemWidth = this.itemsElements.first.nativeElement.getBoundingClientRect().width;
-      this.carouselWrapperStyle = {
-        width: `${this.itemWidth}px`
-      }
+      this.carouselWrapperStyle = { width: `${this.itemWidth}px` };
   }
 
 }

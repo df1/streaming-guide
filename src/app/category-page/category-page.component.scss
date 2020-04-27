@@ -1,6 +1,7 @@
 @import '../../styles/variables';
-.container {
-    min-height: calc
+header {
+    position: relative;
+    // max-height: 80vh;
 }
 .item {
     padding: 0;
@@ -9,15 +10,52 @@
     background-color: mat-color($primary, 900);
     background-size: cover;
     color: mat-color($foreground, text);
-    font-size: 50px;
-    line-height: 520px;
+    font-size: 30px;
+    // line-height: 520px;
     text-align: center;
     .item-content {
+        height: 100%;
         background-image: linear-gradient(to right, rgba(19%, 7%, 7%, 1) 150px, rgba(27%, 13%, 13%, .5) 100%);
         .poster {
+            padding: 20px;
             img {
-                width: 300px;
+                width: 260px;
+                border-radius: 5%;
             }
         }
+    }
+}
+
+article {
+    padding: 15px;
+    @include tablet-down {
+        padding: 5px;
+        text-align: center;
+    }
+}
+.cardholder {
+    text-align: center;
+}
+mat-card {
+    width: 160px;
+    height: 400px;
+    margin: 5px;
+    display: inline-block;
+
+    mat-card-header {
+        height: 60px;
+        ::ng-deep .mat-card-header-text {
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+        mat-card-title, mat-card-subtitle {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+    mat-card-actions{
+        text-align: center;
     }
 }
