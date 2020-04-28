@@ -14,13 +14,13 @@ export class AppComponent implements OnInit{
   title = '楓林晚';
   menuTree = [
     { name: '首頁', link:'index', showInToolbar: false },
-    { name: '電影', link:'movies' },
-    { name: '台劇', link:'taiwan' },
-    { name: '日劇', link:'japan' },
-    { name: '韓劇', link:'korea' },
-    { name: '美劇', link:'usa' },
-    { name: '陸劇', link:'china' },
-    { name: '動畫', link:'anime' },
+    { name: '電影', link:'category/movies' },
+    { name: '台劇', link:'category/taiwan' },
+    { name: '日劇', link:'category/japan' },
+    { name: '韓劇', link:'category/korea' },
+    { name: '美劇', link:'category/usa' },
+    { name: '陸劇', link:'category/china' },
+    { name: '動畫', link:'category/anime' },
   ];
   toolbarMenu = this.menuTree.filter(i=>i.showInToolbar!==false);
   isLoading = false;

@@ -1,5 +1,5 @@
 <header>
-    <app-carousel>
+    <app-carousel *ngIf="isLoading === false">
         <ng-container *ngFor="let item of items.slice(0,7)">
             <ng-container *carouselItem>
             <div class="item"
@@ -9,7 +9,7 @@
                         <img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
                     </div>
                     <div class="info">
-                        <h1 class="title">{{item.title}}</h1>
+                        <h1 class="title">{{item.title || item.name}}</h1>
                         <div class="facts"></div>
                         <div class="overview">
                             <p>{{item.overview}}</p>
@@ -29,11 +29,11 @@
 <article>
     <h2>熱門選擇</h2>
     <div class="cardholder">
-        <mat-card *ngFor="let item of items.slice(7)">
+        <mat-card *ngFor="let item of items.slice(1)">
             <img mat-card-image [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
             <mat-card-header>
-                <mat-card-title>{{item.title}}</mat-card-title>
-                <mat-card-subtitle>{{item.original_title}}</mat-card-subtitle>
+                <mat-card-title>{{item.title || item.name}}</mat-card-title>
+                <mat-card-subtitle>{{item.original_title || item.original_name}}</mat-card-subtitle>
             </mat-card-header>
             <!-- <mat-card-content>
                 <p>{{item.overview}}</p>

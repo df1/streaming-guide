@@ -1,4 +1,8 @@
 @import '../../styles/variables';
+:host {
+    min-height: 90vh;
+    display: block;
+}
 header {
     position: relative;
     // max-height: 80vh;
@@ -43,6 +47,7 @@ header {
                 padding: 30px 0;
                 position: absolute;
                 bottom: 112px;
+                min-width: 300px;
                 button {
                     margin-right: 10px;
                 }
