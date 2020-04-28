@@ -3,6 +3,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router, NavigationEnd } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,25 +13,29 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   @ViewChild('sidenav') sidenav: MatSidenav;
-  title = '楓林晚';
+  readonly shortTitle = '楓林晚';
+  readonly title = '楓林晚 - 追劇 電影 線上看';
+
   menuTree = [
-    { name: '首頁', link:'index', showInToolbar: false },
-    { name: '電影', link:'category/movies' },
-    { name: '台劇', link:'category/taiwan' },
-    { name: '日劇', link:'category/japan' },
-    { name: '韓劇', link:'category/korea' },
-    { name: '美劇', link:'category/usa' },
-    { name: '陸劇', link:'category/china' },
-    { name: '動畫', link:'category/anime' },
+    { name: '首頁', link:'/index', showInToolbar: false },
+    { name: '電影', link:'/category/movies' },
+    { name: '台劇', link:'/category/taiwan' },
+    { name: '日劇', link:'/category/japan' },
+    { name: '韓劇', link:'/category/korea' },
+    { name: '美劇', link:'/category/usa' },
+    { name: '陸劇', link:'/category/china' },
+    { name: '動畫', link:'/category/anime' },
   ];
-  toolbarMenu = this.menuTree.filter(i=>i.showInToolbar!==false);
+  toolbarMenu = this.menuTree.filter(i => i.showInToolbar !== false );
   isLoading = false;
 
   constructor(
     private router: Router,
     private snackBar: MatSnackBar,
+    private titleService: Title,
     changeDetectorRef: ChangeDetectorRef,
-    media: MediaMatcher) {
+    media: MediaMatcher,
+    ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -52,12 +58,16 @@ export class AppComponent implements OnInit{
       });
     }
 
-    // scroll to top when route changes
-    this.router.events.subscribe( e => {
-        if (!(e instanceof NavigationEnd)) {
-            return;
-        }
-        window.scrollTo(0, 0);
+    // when route changes
+    this.router.events
+    .pipe(filter( e => e instanceof NavigationEnd ))
+    .subscribe( (e:NavigationEnd) => {
+      // scroll to top
+      window.scrollTo(0, 0);
+
+      // change title
+      const match = this.menuTree.find( i => i.link === e.url);
+      this.titleService.setTitle( match ? (match.name + ' - ' + this.shortTitle ) : this.title  );
     });
   }
   mobileQuery: MediaQueryList;
