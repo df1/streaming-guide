@@ -328,7 +328,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             snackBarRef.afterDismissed().subscribe(function () {
               document.cookie = 'accept-cookie=true;';
             });
-          }
+          } // scroll to top when route changes
+
+
+          this.router.events.subscribe(function (e) {
+            if (!(e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"])) {
+              return;
+            }
+
+            window.scrollTo(0, 0);
+          });
         }
       }, {
         key: "ngOnDestroy",

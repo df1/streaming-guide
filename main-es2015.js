@@ -98,6 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const _c0 = ["sidenav"];
 function AppComponent_button_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 10);
@@ -155,6 +156,13 @@ class AppComponent {
                 document.cookie = 'accept-cookie=true;';
             });
         }
+        // scroll to top when route changes
+        this.router.events.subscribe(e => {
+            if (!(e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"])) {
+                return;
+            }
+            window.scrollTo(0, 0);
+        });
     }
     ngOnDestroy() {
         this.mobileQuery.removeListener(this._mobileQueryListener);
