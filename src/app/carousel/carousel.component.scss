@@ -15,12 +15,25 @@ ul.carousel-inner {
 
 button {
     position: absolute;
-    top: 50%;
+    width: 36px;
+    min-width: 36px;
+    padding: 0;
+    height: 100%;
+    top: 0;
     &.prev-btn {
         left: 0;
     }
     &.next-btn {
         right: 0;
+    }
+    .mat-button-wrapper{
+        width: 100%;
+    }
+    mat-icon {
+        width: 100%;
+        font-size: 36px;
+        opacity: 0.7;
+        text-align: center;
     }
 }
 .paginator {

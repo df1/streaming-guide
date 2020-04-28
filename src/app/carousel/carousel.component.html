@@ -5,10 +5,10 @@
         </li>
     </ul>
 </section>
-<button mat-icon-button *ngIf="showControls" class="prev-btn" aria-label="previous" (click)="prev(true)">
+<button mat-button *ngIf="showControls" class="prev-btn" aria-label="previous" (click)="prev(true)">
     <mat-icon>keyboard_arrow_left</mat-icon>
 </button>
-<button mat-icon-button *ngIf="showControls" class="next-btn" aria-label="next" (click)="next(true)">
+<button mat-button *ngIf="showControls" class="next-btn" aria-label="next" (click)="next(true)">
     <mat-icon>keyboard_arrow_right</mat-icon>
 </button>
 <div class="paginator">

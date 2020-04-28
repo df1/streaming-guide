@@ -10,17 +10,42 @@ header {
     background-color: mat-color($primary, 900);
     background-size: cover;
     color: mat-color($foreground, text);
-    font-size: 30px;
-    // line-height: 520px;
-    text-align: center;
     .item-content {
+        display: flex;
         height: 100%;
+        padding: 10px 20px;
         background-image: linear-gradient(to right, rgba(19%, 7%, 7%, 1) 150px, rgba(27%, 13%, 13%, .5) 100%);
         .poster {
             padding: 20px;
+            width: 300px;
             img {
                 width: 260px;
                 border-radius: 5%;
+            }
+        }
+        .info {
+            padding: 10px 40px 10px 5px;
+            h1 {
+                font-size: 1.8em;
+            }
+            .overview {
+                opacity: .7;
+                max-height: 168px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 7;
+                overflow:hidden;
+                p {
+                    display: inline;
+                }
+            }
+            .actions {
+                padding: 30px 0;
+                position: absolute;
+                bottom: 112px;
+                button {
+                    margin-right: 10px;
+                }
             }
         }
     }

@@ -8,7 +8,17 @@
                     <div class="poster">
                         <img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
                     </div>
-                    <div class="title">{{item.title}}</div>
+                    <div class="info">
+                        <h1 class="title">{{item.title}}</h1>
+                        <div class="facts"></div>
+                        <div class="overview">
+                            <p>{{item.overview}}</p>
+                        </div>
+                        <div class="actions">
+                            <button mat-stroked-button>線上看</button>
+                            <button mat-stroked-button>加到片單</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             </ng-container>
@@ -29,8 +39,7 @@
                 <p>{{item.overview}}</p>
             </mat-card-content> -->
             <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
+                <button mat-stroked-button>線上看</button>
             </mat-card-actions>
         </mat-card>
     </div>

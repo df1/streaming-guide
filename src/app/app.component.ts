@@ -20,6 +20,7 @@ export class AppComponent implements OnInit{
     { name: '韓劇', link:'korea' },
     { name: '美劇', link:'usa' },
     { name: '陸劇', link:'china' },
+    { name: '動畫', link:'anime' },
   ];
   toolbarMenu = this.menuTree.filter(i=>i.showInToolbar!==false);
   isLoading = false;
