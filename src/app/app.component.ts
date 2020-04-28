@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -50,6 +50,14 @@ export class AppComponent implements OnInit{
         document.cookie = 'accept-cookie=true;';
       });
     }
+
+    // scroll to top when route changes
+    this.router.events.subscribe( e => {
+        if (!(e instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0);
+    });
   }
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
