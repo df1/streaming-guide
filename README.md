@@ -1,4 +1,4 @@
-# Streaming Guide ![CI](https://github.com/df1/streaming-guide/workflows/CI/badge.svg)
+# Streaming Guide ![CI](https://github.com/df1/streaming-guide/workflows/CI/badge.svg) ![License](https://img.shields.io/github/license/df1/streaming-guide)
 
 This project is to provide a guide to video watchers where can they watch a specific show / movie.
 
