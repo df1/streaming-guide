@@ -26,6 +26,7 @@
             "assets": [
               "src/404.html",
               "src/robots.txt",
+              "src/sitemap.xml",
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest"
@@ -95,10 +96,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/404.html",
-              "src/robots.txt",
               "src/favicon.ico",
-              "src/assets",
-              "src/manifest.webmanifest"
+              "src/assets"
             ],
             "styles": [
               "src/styles/theme.scss",
