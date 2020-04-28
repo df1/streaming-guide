@@ -16,10 +16,11 @@ export class CategoryPageComponent implements OnInit {
 
   category: string;
   isLoading: boolean = true;
-  items: any[] = [];
+  items: any[] = [{name: 'loading...'}];
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
+        this.isLoading = true;
         this.category = params.get('category');
         this.categoryService.getCategory(this.category).subscribe( (data: any[]) => {
           this.items = data;

@@ -1,4 +1,6 @@
 @import '../../styles/variables';
+@import '../../styles/placeholder-loading';
+
 :host {
     min-height: 90vh;
     display: block;
@@ -14,6 +16,18 @@ header {
     background-color: mat-color($primary, 900);
     background-size: cover;
     color: mat-color($foreground, text);
+    .ph-item {
+        display: flex;
+        .ph-picture {
+            margin: 0 40px 0 28px;
+            border-radius: 12px;
+            max-width: 260px;
+            height: 390px;
+        }
+        .ph-row {
+            padding-right: 30px;
+        }
+    }
     .item-content {
         display: flex;
         height: 100%;
@@ -24,7 +38,7 @@ header {
             width: 300px;
             img {
                 width: 260px;
-                border-radius: 5%;
+                border-radius: 12px;
             }
         }
         .info {
