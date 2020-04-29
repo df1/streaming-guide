@@ -31,7 +31,7 @@ header {
     .item-content {
         display: flex;
         height: 100%;
-        padding: 10px 20px;
+        padding: 25px 20px 60px;
         background-image: linear-gradient(to right, rgba(19%, 7%, 7%, 1) 150px, rgba(27%, 13%, 13%, .5) 100%);
         .poster {
             padding: 20px;
@@ -42,9 +42,10 @@ header {
             }
         }
         .info {
-            padding: 10px 40px 10px 5px;
+            padding: 20px;
             h1 {
                 font-size: 1.8em;
+                margin-top: 0;
             }
             .overview {
                 opacity: .7;
@@ -58,12 +59,21 @@ header {
                 }
             }
             .actions {
-                padding: 30px 0;
+                padding: 20px 0;
                 position: absolute;
-                bottom: 112px;
+                bottom: 82px;
                 min-width: 300px;
                 button {
-                    margin-right: 10px;
+                    margin-right: 16px;
+                    font-size: 1.1em;
+                    padding: 4px 22px 4px 14px;
+                    border-color: rgba(255, 255, 255, 0.5);
+                    &[color=accent] {
+                        background-color: #ffffffcc;
+                    }
+                    mat-icon {
+                        margin-bottom: 2px;
+                    }
                 }
             }
         }
