@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CategoryPageComponent } from './category-page/category-page.component';
 import { CarouselItemDirective, CarouselItemElement } from './carousel/carousel-item.directive';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CarouselItemDirective, CarouselItemElement } from './carousel/carousel-
     CarouselComponent,
     CarouselItemDirective,
     CarouselItemElement,
-    CategoryPageComponent
+    CategoryPageComponent,
+    FooterComponent
   ],
   imports: [
     // MatDatepickerModule,
