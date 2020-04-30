@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" [class.elevated]="!isInMainPage || isScrolled ">
   <button mat-icon-button (click)="sidenav.toggle()" class="hamburger" aria-label="menu"><mat-icon>menu</mat-icon></button>
   <span class="title" routerLink="/">楓林晚 </span> &nbsp;
 

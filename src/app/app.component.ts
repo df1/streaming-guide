@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, NgZone } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { ScrollDispatcher } from '@angular/cdk/scrolling';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { filter } from 'rxjs/operators';
+import { filter, debounce } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -28,17 +29,23 @@ export class AppComponent implements OnInit{
   ];
   toolbarMenu = this.menuTree.filter(i => i.showInToolbar !== false );
   isLoading = false;
+  isInMainPage: boolean;
+  isScrolled = false;
 
   constructor(
     private router: Router,
     private snackBar: MatSnackBar,
     private titleService: Title,
-    changeDetectorRef: ChangeDetectorRef,
-    media: MediaMatcher,
+    private changeDetectorRef: ChangeDetectorRef,
+    private media: MediaMatcher,
+    private scrollDispatcher: ScrollDispatcher,
+    private zone: NgZone
     ) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+    this.scrollDispatcher.scrolled(100).subscribe( () =>
+      this.zone.run(() => this.isScrolled = document.scrollingElement.scrollTop > 0));
   }
 
   ngOnInit() {
@@ -64,6 +71,9 @@ export class AppComponent implements OnInit{
     .subscribe( (e:NavigationEnd) => {
       // scroll to top
       window.scrollTo(0, 0);
+
+      // judge if it's in main page
+      this.isInMainPage = e.url === '/' || e.url === '/index';
 
       // change title
       const match = this.menuTree.find( i => i.link === e.url);

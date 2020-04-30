@@ -2,6 +2,10 @@
 
 // top toolbar
 mat-toolbar {
+    @include mat-elevation-transition;
+    &.elevated {
+        @include mat-elevation(8);
+    }
     position: fixed;
     z-index: 3;
     padding-left: 10px;
