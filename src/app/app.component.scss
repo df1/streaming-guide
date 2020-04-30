@@ -2,16 +2,15 @@
 
 // top toolbar
 mat-toolbar {
+    position: fixed;
     @include mat-elevation-transition;
     &.elevated {
         @include mat-elevation(8);
     }
-    position: fixed;
     z-index: 3;
     padding-left: 10px;
-    padding-top: $toolbar-height;
-    top: -$toolbar-height;
-    height: $toolbar-height+$toolbar-height !important;
+    top: 0;
+    height: $toolbar-height !important;
     .title{
         padding: 10px;
         font-size: 24px;

@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 // content
 header {
-    // min-height: calc( 100vh - #{$toolbar-height} );
     display: block;
     overflow: hidden;
     table {
@@ -174,9 +173,6 @@ section#intro {
 }
 
 // article
-div[layout=row]{
-}
-
 .layout-row {
     flex-direction: row;
 }
