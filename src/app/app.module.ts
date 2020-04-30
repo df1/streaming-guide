@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
@@ -25,6 +26,15 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CategoryPageComponent } from './category-page/category-page.component';
 import { CarouselItemDirective, CarouselItemElement } from './carousel/carousel-item.directive';
 import { FooterComponent } from './footer/footer.component';
+
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any> {
+      pinch: { enable: false },
+      rotate: { enable: false },
+      swipe: { enable: false },
+      pan: { direction: 6 } // only allow horizontal pan
+  }
+}
 
 @NgModule({
   declarations: [
@@ -77,7 +87,10 @@ import { FooterComponent } from './footer/footer.component';
     MatSnackBarModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

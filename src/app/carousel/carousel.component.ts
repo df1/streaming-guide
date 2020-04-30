@@ -13,16 +13,16 @@ export class CarouselComponent implements AfterViewInit {
   @ContentChildren(CarouselItemDirective) items: QueryList<CarouselItemDirective>;
   @ViewChildren(CarouselItemElement, { read: ElementRef }) private itemsElements: QueryList<ElementRef>;
   @ViewChild('carousel') private carousel: ElementRef;
-  @Input() timing = '250ms ease-in';
+  @Input() timing = '100ms ease-in';
   @Input() showControls = true;
   private player: AnimationPlayer;
   private itemWidth: number;
   currentSlide = 0;
-  carouselWrapperStyle = {}
+  carouselWrapperStyle = {};
 
-  private buildAnimation(offset: number) {
+  private buildAnimation(offset: number, timing?:string) {
     return this.builder.build([
-      animate(this.timing, style({ transform: `translateX(-${offset}px)` }))
+      animate(timing || this.timing, style({ transform: `translateX(${-offset}px)` }))
     ]);
   }
 
@@ -34,18 +34,14 @@ export class CarouselComponent implements AfterViewInit {
   }
 
   next(infiniteNext: boolean = false ) {
-    if (this.currentSlide + 1 === this.items.length && infiniteNext !== true) {
-      return;
-    } else {
+    if (this.currentSlide + 1 < this.items.length || infiniteNext === true) {
       this.currentSlide = (this.currentSlide + 1) % this.items.length;
     }
     this.playPageAnimation();
   }
 
   prev(infinitePrev: boolean = false ) {
-    if (this.currentSlide === 0 && infinitePrev !== true ) {
-      return;
-    } else {
+    if (this.currentSlide > 0 || infinitePrev === true ) {
       this.currentSlide = ((this.currentSlide - 1) + this.items.length) % this.items.length;
     }
     this.playPageAnimation();
@@ -54,6 +50,24 @@ export class CarouselComponent implements AfterViewInit {
   goToPage(page: number) {
     this.currentSlide = page;
     this.playPageAnimation();
+  }
+
+  pan(e: any){
+    if( e.isFinal ) return;
+    const offset = (this.currentSlide * this.itemWidth) - e.deltaX;
+    const myAnimation: AnimationFactory = this.buildAnimation(offset, '0ms linear');
+    this.player = myAnimation.create(this.carousel.nativeElement);
+    this.player.play();
+  }
+
+  panend(e: any){
+    if (e.velocityX < -0.3 && e.distance > 10) {
+      this.next();
+    } else if (e.velocityX > 0.3 && e.distance > 10) {
+      this.prev();
+    } else {
+      this.playPageAnimation();
+    }
   }
 
   @HostListener('window:resize', ['$event'])
