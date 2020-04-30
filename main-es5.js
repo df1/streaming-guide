@@ -341,7 +341,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.mobileQuery.addListener(this._mobileQueryListener);
         this.scrollDispatcher.scrolled(100).subscribe(function () {
-          return _this.zone.run(function () {
+          return _this.isInMainPage && _this.zone.run(function () {
             return _this.isScrolled = document.scrollingElement.scrollTop > 0;
           });
         });

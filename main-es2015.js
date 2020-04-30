@@ -156,7 +156,7 @@ class AppComponent {
         this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
         this.mobileQuery.addListener(this._mobileQueryListener);
-        this.scrollDispatcher.scrolled(100).subscribe(() => this.zone.run(() => this.isScrolled = document.scrollingElement.scrollTop > 0));
+        this.scrollDispatcher.scrolled(100).subscribe(() => this.isInMainPage && this.zone.run(() => this.isScrolled = document.scrollingElement.scrollTop > 0));
     }
     ngOnInit() {
         // for Github Page's routing hack with 404.html
