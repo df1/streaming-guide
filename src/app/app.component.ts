@@ -45,7 +45,7 @@ export class AppComponent implements OnInit{
     this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.scrollDispatcher.scrolled(100).subscribe( () =>
-      this.zone.run(() => this.isScrolled = document.scrollingElement.scrollTop > 0));
+      this.isInMainPage && this.zone.run(() => this.isScrolled = document.scrollingElement.scrollTop > 0));
   }
 
   ngOnInit() {
