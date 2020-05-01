@@ -26,9 +26,9 @@ export class CarouselComponent implements AfterViewInit {
     ]);
   }
 
-  private playPageAnimation() {
+  private playPageAnimation(timing?:string) {
     const offset = this.currentSlide * this.itemWidth;
-    const myAnimation: AnimationFactory = this.buildAnimation(offset);
+    const myAnimation: AnimationFactory = this.buildAnimation(offset, timing);
     this.player = myAnimation.create(this.carousel.nativeElement);
     this.player.play();
   }
@@ -73,7 +73,7 @@ export class CarouselComponent implements AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.ngAfterViewInit();
-    this.playPageAnimation();
+    this.playPageAnimation('0ms linear');
   }
 
   constructor(private builder: AnimationBuilder) {
