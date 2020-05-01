@@ -17,17 +17,37 @@ header {
     max-height: calc( 100vh - #{$toolbar-height}) ;
     background-color: mat-color($primary, 900);
     background-size: cover;
-    background-position: center;
+    background-position: 50% 10%;
     color: mat-color($foreground, text);
     .ph-item {
         display: flex;
+        padding: 30px 20% 15px 20%;
+        flex-wrap: nowrap;
+        @include mobile-down {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0 0;
+        }
         .ph-picture {
-            margin: 0 40px 0 28px;
             border-radius: 12px;
-            max-width: 260px;
+            max-width: 190px;
+            min-width: 180px;
+            min-height: 260px;
+            margin-right: 40px;
+            @include mobile-down {
+                margin-right: 0;
+            }
+        }
+        .ph-info {
+            min-width: 60%;
         }
         .ph-row {
             padding-right: 30px;
+            @include mobile-down {
+                padding: 0;
+                justify-content: center;
+            }
         }
     }
     .item-content {
@@ -110,9 +130,9 @@ header {
                 }
             }
             .actions {
-                padding: 20px 0;
+                padding-top: 40px;
                 @include tablet-down {
-                    padding: 5px 0;
+                    padding-top: 15px;
                 }
                 @include mobile-down {
                     display: flex;
@@ -152,7 +172,7 @@ article {
     text-align: center;
     @include mobile-down {
         white-space: nowrap;
-        overflow-x: scroll;
+        overflow-x: auto;
     }
 }
 mat-card {
