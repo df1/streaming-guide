@@ -150,6 +150,10 @@ article {
 }
 .cardholder {
     text-align: center;
+    @include mobile-down {
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
 }
 mat-card {
     width: 160px;
