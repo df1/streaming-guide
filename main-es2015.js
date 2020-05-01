@@ -604,9 +604,9 @@ class CarouselComponent {
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])(timing || this.timing, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ transform: `translateX(${-offset}px)` }))
         ]);
     }
-    playPageAnimation() {
+    playPageAnimation(timing) {
         const offset = this.currentSlide * this.itemWidth;
-        const myAnimation = this.buildAnimation(offset);
+        const myAnimation = this.buildAnimation(offset, timing);
         this.player = myAnimation.create(this.carousel.nativeElement);
         this.player.play();
     }
@@ -647,7 +647,7 @@ class CarouselComponent {
     }
     onResize(event) {
         this.ngAfterViewInit();
-        this.playPageAnimation();
+        this.playPageAnimation('0ms linear');
     }
     ngAfterViewInit() {
         this.itemWidth = this.itemsElements.first.nativeElement.getBoundingClientRect().width;

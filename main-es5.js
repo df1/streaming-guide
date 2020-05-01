@@ -1174,9 +1174,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "playPageAnimation",
-        value: function playPageAnimation() {
+        value: function playPageAnimation(timing) {
           var offset = this.currentSlide * this.itemWidth;
-          var myAnimation = this.buildAnimation(offset);
+          var myAnimation = this.buildAnimation(offset, timing);
           this.player = myAnimation.create(this.carousel.nativeElement);
           this.player.play();
         }
@@ -1232,7 +1232,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "onResize",
         value: function onResize(event) {
           this.ngAfterViewInit();
-          this.playPageAnimation();
+          this.playPageAnimation('0ms linear');
         }
       }, {
         key: "ngAfterViewInit",
