@@ -10,7 +10,7 @@
   <!-- <button mat-icon-button class="toolbar-item" matTooltip="Export Excel" (click)="exportExcel()" aria-label="Export">
     <mat-icon>grid_on</mat-icon>
   </button> -->
-  <button mat-icon-button class="toolbar-item" matTooltip="Donate" aria-label="Donate">
+  <button mat-icon-button class="toolbar-item" matTooltip="Donate" aria-label="Donate" (click)="login()">
     <mat-icon>insert_emoticon</mat-icon>
   </button>
 </mat-toolbar>
@@ -30,5 +30,6 @@
 
   <mat-sidenav-content>
     <router-outlet></router-outlet>
+    <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

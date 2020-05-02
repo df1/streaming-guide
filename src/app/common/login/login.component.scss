@@ -1,0 +1,23 @@
+
+.container {
+    padding-bottom: 60px;
+    text-align: center;
+    h1 {
+        margin: 40px 0;
+    }
+    button {
+        width: 192px;
+        display: block;
+        margin: 20px auto;
+        color: white;
+        &.google {
+            background-color: #db4437;
+        }
+        &.facebook {
+            background-color: #385899;
+        }
+        &.github {
+            background-color: #000;
+        }
+    }
+}

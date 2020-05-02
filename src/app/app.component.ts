@@ -6,6 +6,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { filter, debounce } from 'rxjs/operators';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,8 @@ export class AppComponent implements OnInit{
     private changeDetectorRef: ChangeDetectorRef,
     private media: MediaMatcher,
     private scrollDispatcher: ScrollDispatcher,
-    private zone: NgZone
+    private zone: NgZone,
+    private authService: AuthService,
     ) {
     this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
@@ -89,5 +91,9 @@ export class AppComponent implements OnInit{
 
   closeSidenav(): void {
     this.sidenav.close();
+  }
+
+  login() {
+    this.authService.doGoogleLogin();
   }
 }

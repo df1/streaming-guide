@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { REPO_URL, SPONSOR_URL } from '../util/constants';
+import { REPO_URL, SPONSOR_URL } from '../../util/constants';
 
 @Component({
   selector: 'app-footer',

@@ -5,34 +5,40 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
 
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatListModule} from '@angular/material/list';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics'
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from './common/carousel/carousel.component';
 import { CategoryPageComponent } from './category-page/category-page.component';
-import { CarouselItemDirective, CarouselItemElement } from './carousel/carousel-item.directive';
-import { FooterComponent } from './footer/footer.component';
+import { CarouselItemDirective, CarouselItemElement } from './common/carousel/carousel-item.directive';
+import { FooterComponent } from './common/footer/footer.component';
+import { LoginComponent } from './common/login/login.component';
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
       pinch: { enable: false },
       rotate: { enable: false },
       swipe: { enable: false },
-      pan: { direction: 6 } // only allow horizontal pan
+      // only allow horizontal pan
+      pan: { direction: 6 }
   }
 }
 
@@ -40,34 +46,14 @@ export class MyHammerConfig extends HammerGestureConfig {
   declarations: [
     AppComponent,
     MainPageComponent,
-    // ListDisplayComponent,
     CarouselComponent,
     CarouselItemDirective,
     CarouselItemElement,
     CategoryPageComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
-    // MatDatepickerModule,
-    // MatRadioModule,
-    // MatSelectModule,
-    // MatSliderModule,
-    // MatSlideToggleModule,
-    // MatStepperModule,
-    // MatTabsModule,
-    // MatExpansionModule,
-    // MatProgressSpinnerModule,
-    // MatInputModule,
-    // MatAutocompleteModule,
-    // MatFormFieldModule,
-    // MatGridListModule,
-    // MatButtonToggleModule,
-    // MatChipsModule,
-    // MatProgressBarModule,
-    // MatTableModule,
-    // MatSortModule,
-    // MatCheckboxModule,
-    // MatPaginatorModule,
     BrowserModule,
     BrowserAnimationsModule,
     HammerModule,
@@ -85,12 +71,16 @@ export class MyHammerConfig extends HammerGestureConfig {
     MatDialogModule,
     MatTooltipModule,
     MatSnackBarModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
 
