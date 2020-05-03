@@ -11,7 +11,11 @@
     <mat-icon>insert_emoticon</mat-icon>
   </button>
   <button mat-button *ngIf="!userInfo" routerLink="/login">登入</button>
-  <button mat-icon-button *ngIf="userInfo" class="avatar" routerLink="/my">
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item routerLink="/my" >我的片單</button>
+    <button mat-menu-item routerLink="/login" >登出</button>
+  </mat-menu>
+  <button mat-icon-button *ngIf="userInfo" class="avatar" [matMenuTriggerFor]="appMenu">
     <img [src]="userInfo.photoURL" alt="avatar">
   </button>
 </mat-toolbar>
