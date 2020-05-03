@@ -53,7 +53,10 @@
             <img mat-card-image [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
             <mat-card-header>
                 <mat-card-title>{{item.title || item.name}}</mat-card-title>
-                <mat-card-subtitle>{{item.original_title || item.original_name}}</mat-card-subtitle>
+                <mat-card-subtitle
+                    *ngIf="(item.original_title || item.original_name) !== (item.title || item.name)">
+                    {{item.original_title || item.original_name}}
+                </mat-card-subtitle>
             </mat-card-header>
             <!-- <mat-card-content>
                 <p>{{item.overview}}</p>
