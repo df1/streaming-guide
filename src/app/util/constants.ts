@@ -1,5 +1,5 @@
 export const REPO_URL = '//github.com/df1/streaming-guide';
-export const SPONSOR_URL = REPO_URL;
+export const SPONSOR_URL = '//www.paypal.me/ellischang1';
 export const PROVIDER_LIST = [
   { id: 1, name: 'Netflix' },
   { id: 2, name: 'LINE TV' },

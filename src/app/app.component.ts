@@ -6,6 +6,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { filter, debounce } from 'rxjs/operators';
+import { SPONSOR_URL } from './util/constants';
 import { AuthService } from './service/auth.service';
 
 @Component({
@@ -32,6 +33,9 @@ export class AppComponent implements OnInit{
   isLoading = false;
   isInMainPage: boolean;
   isScrolled = false;
+  get userInfo() {
+    return this.authService.getUserInfo();
+  }
 
   constructor(
     private router: Router,
@@ -93,7 +97,7 @@ export class AppComponent implements OnInit{
     this.sidenav.close();
   }
 
-  login() {
-    this.authService.doGoogleLogin();
+  donate() {
+    window.open(SPONSOR_URL);
   }
 }

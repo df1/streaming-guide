@@ -31,6 +31,7 @@ import { CategoryPageComponent } from './category-page/category-page.component';
 import { CarouselItemDirective, CarouselItemElement } from './common/carousel/carousel-item.directive';
 import { FooterComponent } from './common/footer/footer.component';
 import { LoginComponent } from './common/login/login.component';
+import { MyWatchlistComponent } from './my-watchlist/my-watchlist.component';
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
@@ -51,7 +52,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     CarouselItemElement,
     CategoryPageComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    MyWatchlistComponent
   ],
   imports: [
     BrowserModule,

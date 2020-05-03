@@ -7,11 +7,12 @@
   </button>
   <span class="fill-remaining-space"></span>
 
-  <!-- <button mat-icon-button class="toolbar-item" matTooltip="Export Excel" (click)="exportExcel()" aria-label="Export">
-    <mat-icon>grid_on</mat-icon>
-  </button> -->
-  <button mat-icon-button class="toolbar-item" matTooltip="Donate" aria-label="Donate" (click)="login()">
+  <button mat-icon-button class="toolbar-item" matTooltip="Donate" aria-label="Donate" (click)="donate()">
     <mat-icon>insert_emoticon</mat-icon>
+  </button>
+  <button mat-button *ngIf="!userInfo" routerLink="/login">登入</button>
+  <button mat-icon-button *ngIf="userInfo" class="avatar" routerLink="/my">
+    <img [src]="userInfo.photoURL" alt="avatar">
   </button>
 </mat-toolbar>
 <!-- <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar> -->

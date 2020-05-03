@@ -10,14 +10,17 @@
         display: block;
         margin: 20px auto;
         color: white;
-        &.google {
+        &.Google {
             background-color: #db4437;
         }
-        &.facebook {
+        &.Facebook {
             background-color: #385899;
         }
-        &.github {
+        &.Github {
             background-color: #000;
+        }
+        &[disabled] {
+            opacity: .5;
         }
     }
 }

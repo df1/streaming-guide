@@ -1,40 +1,54 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private user: Observable<firebase.User>;
+  private userInfo: firebase.User = null;
 
   constructor(
-    public angularFireAuth: AngularFireAuth
-  ) { }
+    private angularFireAuth: AngularFireAuth,
+  ) {
+    this.user = angularFireAuth.authState;
+    this.user.subscribe( user => {
+      if (user) {
+        this.userInfo = user;
+      }
+      else {
+        this.userInfo = null;
+      }
+    });
+  }
 
-  doGithubLogin() {
-    let provider = new auth.GithubAuthProvider();
+  signIn(providerName: string) {
+    let provider = new auth[providerName + 'AuthProvider']();
     provider.addScope('profile');
     provider.addScope('email');
     provider.setCustomParameters({
-      'allow_signup': 'false'
+      allow_signup: 'false'
     });
     return from(this.angularFireAuth.signInWithPopup(provider));
   }
 
-  doGoogleLogin() {
-    let provider = new auth.GoogleAuthProvider();
-    provider.addScope('profile');
-    provider.addScope('email');
-
-    return from(this.angularFireAuth.signInWithPopup(provider));
+  signOut() {
+    return from(this.angularFireAuth.signOut());
   }
 
-  doFacebookLogin() {
-    let provider = new auth.FacebookAuthProvider();
-    provider.addScope('profile');
-    provider.addScope('email');
+  isLoggedIn() {
+    if (this.userInfo == null ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
-    return from(this.angularFireAuth.signInWithPopup(provider));
+  getUserInfo() {
+    return this.userInfo;
   }
 }
+

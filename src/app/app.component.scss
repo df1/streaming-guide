@@ -43,12 +43,12 @@ mat-toolbar {
         font-size: 14px;
     }
 
-    .selection-field {
-        width: 100px;
-    }
-
-    mat-checkbox {
-        font-size: 14px;
+    .avatar {
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
     }
 
     // the "Loading" bar
