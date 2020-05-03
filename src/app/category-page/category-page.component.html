@@ -35,8 +35,8 @@
                             <p>{{item.overview}}</p>
                         </div>
                         <div class="actions">
-                            <button mat-flat-button color="accent"><mat-icon>play_arrow</mat-icon> 線上看</button>
-                            <button mat-stroked-button><mat-icon>add</mat-icon> 加到片單</button>
+                            <button mat-flat-button color="accent" (click)="watch()"><mat-icon>play_arrow</mat-icon> 線上看</button>
+                            <button mat-stroked-button (click)="addToWatchList()"><mat-icon>add</mat-icon> 加到片單</button>
                         </div>
                     </div>
                 </div>

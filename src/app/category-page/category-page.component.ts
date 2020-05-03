@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CategoryService } from '../service/category.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-category-page',
@@ -11,7 +12,8 @@ export class CategoryPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private snackBar: MatSnackBar,
   ) { }
 
   category: string;
@@ -29,4 +31,13 @@ export class CategoryPageComponent implements OnInit {
     });
   }
 
+  watch() {
+    window.open('https://www.netflix.com/title/81243996');
+  }
+
+  addToWatchList() {
+    this.snackBar.open('Not yet implemented','OK', {
+      duration: 1000
+    });
+  }
 }
