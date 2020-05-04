@@ -1,0 +1,39 @@
+<div class="item" *ngIf="isLoading">
+    <div class="ph-item">
+        <div class="ph-picture"></div>
+        <div class="ph-info ph-col-12">
+            <div class="ph-row">
+                <div class="ph-col-12 empty"></div>
+                <div class="ph-col-4 big"></div>
+                <div class="ph-col-12 empty"></div>
+                <div class="ph-col-12"></div>
+                <div class="ph-col-12"></div>
+                <div class="ph-col-12"></div>
+                <div class="ph-col-12"></div>
+                <div class="ph-col-12"></div>
+                <div class="ph-col-10"></div>
+                <div class="ph-col-2 empty"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="item" *ngIf="!isLoading"
+    [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w780'+show.backdrop_path+')'">
+    <div class="item-content">
+        <div class="poster">
+            <img *ngIf="show.poster_path" [src]="'https://image.tmdb.org/t/p/w342'+show.poster_path" alt="poster" draggable="false">
+            <div *ngIf="!show.poster_path" class="poster-loading"></div>
+        </div>
+        <div class="info">
+            <h1 class="title">{{show.title || show.name}}</h1>
+            <div class="facts"></div>
+            <div class="overview">
+                <p>{{show.overview}}</p>
+            </div>
+            <div class="actions">
+                <button mat-flat-button color="accent" (click)="watch()"><mat-icon>play_arrow</mat-icon> 線上看</button>
+                <button mat-stroked-button (click)="addToWatchList()"><mat-icon>add</mat-icon> 加到片單</button>
+            </div>
+        </div>
+    </div>
+</div>

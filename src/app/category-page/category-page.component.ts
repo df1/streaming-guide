@@ -13,7 +13,6 @@ export class CategoryPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private categoryService: CategoryService,
-    private snackBar: MatSnackBar,
   ) { }
 
   category: string;
@@ -28,16 +27,6 @@ export class CategoryPageComponent implements OnInit {
           this.items = data;
           this.isLoading = false;
         });
-    });
-  }
-
-  watch() {
-    window.open('https://www.netflix.com/title/81243996');
-  }
-
-  addToWatchList() {
-    this.snackBar.open('Not yet implemented','OK', {
-      duration: 1000
     });
   }
 }

@@ -1,0 +1,156 @@
+@import '../../../styles/variables';
+@import '../../../styles/placeholder-loading';
+
+.item {
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100%;
+    min-height: 218px;
+    max-height: calc( 100vh - #{$toolbar-height}) ;
+    background-color: mat-color($primary, 900);
+    background-size: cover;
+    background-position: 50% 10%;
+    color: mat-color($foreground, text);
+    .ph-item {
+        display: flex;
+        padding: 30px 20% 15px 20%;
+        flex-wrap: nowrap;
+        @include mobile-down {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0 0;
+        }
+        .ph-picture {
+            border-radius: 12px;
+            max-width: 190px;
+            min-width: 180px;
+            min-height: 260px;
+            margin-right: 40px;
+            @include mobile-down {
+                margin-right: 0;
+            }
+        }
+        .ph-info {
+            min-width: 60%;
+        }
+        .ph-row {
+            padding-right: 30px;
+            @include mobile-down {
+                padding: 0;
+                justify-content: center;
+            }
+        }
+    }
+    .item-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        max-width: 100vw;
+        width: 100%;
+        height: 100%;
+        padding: 25px 70px 50px 60px;
+        background-image: linear-gradient(to right, rgba(19%, 7%, 7%, 1) 150px, rgba(27%, 13%, 13%, .5) 100%);
+        @include mobile-down {
+            padding: 25px 0 45px 0;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-image: linear-gradient(to bottom, #301212 150px, rgba(69, 33, 33, 0.5) 100%);
+        }
+        .poster {
+            max-width: 300px;
+            min-width: 200px;
+            text-align: center;
+            overflow: hidden;
+            flex: 1 0;
+            display: flex;
+            align-items: center;
+            @include mobile-down {
+                padding: 0 10px;
+                display: block;
+            }
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 12px;
+                flex: 0;
+                min-height: 210px;
+            }
+        }
+        .info {
+            flex: 1 0;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            padding-left: 50px;
+            max-width: 600px;
+            @include tablet-down {
+                padding-left: 30px;
+            }
+            @include mobile-down {
+                padding: 10px;
+            }
+            @media (max-height: 375px) {
+                padding-top: 0;
+            }
+            h1 {
+                font-size: 1.8em;
+                margin-top: 0;
+                @include tablet-down {
+                    margin: 5px 0;
+                }
+            }
+            .overview {
+                opacity: .7;
+                max-height: 168px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 7;
+                overflow:hidden;
+                p {
+                    display: inline;
+                }
+                @include mobile-down {
+                    display: none;
+                }
+                @media (max-height: 450px) {
+                    -webkit-line-clamp: 3;
+                }
+                @media (max-height: 375px) {
+                    display:none;
+                }
+            }
+            .actions {
+                padding-top: 40px;
+                @include tablet-down {
+                    padding-top: 15px;
+                }
+                @include mobile-down {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0;
+                }
+                button {
+                    min-width: 138px;
+                    margin: 10px 10px 0 0;
+                    font-size: 1.1em;
+                    padding: 4px 22px 4px 14px;
+                    border-color: rgba(255, 255, 255, 0.5);
+                    &[color=accent] {
+                        background-color: #ffffffcc;
+                    }
+                    @include mobile-down {
+                        margin-right: 0;
+                    }
+                    mat-icon {
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
