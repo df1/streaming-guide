@@ -105,13 +105,12 @@
             }
             .overview {
                 opacity: .7;
-                max-height: 168px;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 7;
                 overflow:hidden;
-                p {
-                    display: inline;
+                &.limit-overview {
+                    max-height: 168px;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 7;
                 }
                 @include mobile-down {
                     display: none;
@@ -122,9 +121,15 @@
                 @media (max-height: 375px) {
                     display:none;
                 }
+                p {
+                    display: inline;
+                }
+            }
+            .spacer {
+                flex: 1;
             }
             .actions {
-                padding-top: 40px;
+                padding: 20px;
                 @include tablet-down {
                     padding-top: 15px;
                 }

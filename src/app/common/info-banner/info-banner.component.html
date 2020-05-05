@@ -27,9 +27,10 @@
         <div class="info">
             <h1 class="title">{{entity.title || entity.name}}</h1>
             <div class="facts"></div>
-            <div class="overview">
+            <div class="overview" [class.limit-overview]="limitOverviewLength">
                 <p>{{entity.overview}}</p>
             </div>
+            <div class="spacer"></div>
             <div class="actions">
                 <button mat-flat-button color="accent" (click)="watch()"><mat-icon>play_arrow</mat-icon> 線上看</button>
                 <button mat-stroked-button (click)="addToWatchList()"><mat-icon>add</mat-icon> 加到片單</button>
