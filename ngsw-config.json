@@ -25,5 +25,18 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "apis",
+      "urls": [
+        "/assets/sample-data/**"
+      ],
+      "cacheConfig": {
+        "maxAge": "30d",
+        "maxSize": 100,
+        "strategy": "performance"
+      }
+    }
   ]
 }
