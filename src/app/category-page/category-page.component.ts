@@ -11,22 +11,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CategoryPageComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private categoryService: CategoryService,
+    private route: ActivatedRoute
   ) { }
 
   category: string;
   isLoading: boolean = true;
-  items: any[] = [{name: 'loading...'}];
+  items: any[] = [{name: 'Loading...'}];
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-        this.isLoading = true;
-        this.category = params.get('category');
-        this.categoryService.getCategory(this.category).subscribe( (data: any[]) => {
-          this.items = data;
-          this.isLoading = false;
-        });
+    this.route.data.subscribe( data => {
+      this.isLoading = false;
+      this.items = data.categoryData;
     });
   }
 

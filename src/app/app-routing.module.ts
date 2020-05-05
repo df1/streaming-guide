@@ -7,12 +7,14 @@ import { MyWatchlistComponent } from './my-watchlist/my-watchlist.component';
 import { AuthGuardService } from './service/auth-guard.service';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { EntityResolverService } from './service/entity-resolver.service';
+import { CategoryResolverService } from './service/category-resolver.service';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'index', component: MainPageComponent },
-  { path: 'category/:category', component: CategoryPageComponent },
-  { path: 'info/:id', component: InfoPageComponent, resolve: { entity: EntityResolverService} },
+  { path: 'category/:category', component: CategoryPageComponent,
+      resolve: { categoryData: CategoryResolverService}},
+  { path: 'info/:id', component: InfoPageComponent, resolve: { entity: EntityResolverService}},
   { path: 'login', component: LoginComponent },
   { path: 'my', component: MyWatchlistComponent, canActivate: [AuthGuardService] },
   { path: '**', component: MainPageComponent },
