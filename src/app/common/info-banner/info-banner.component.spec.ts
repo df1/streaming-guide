@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowBannerComponent } from './show-banner.component';
+import { InfoBannerComponent } from './info-banner.component';
 
-describe('ShowBannerComponent', () => {
-  let component: ShowBannerComponent;
-  let fixture: ComponentFixture<ShowBannerComponent>;
+describe('InfoBannerComponent', () => {
+  let component: InfoBannerComponent;
+  let fixture: ComponentFixture<InfoBannerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowBannerComponent ]
+      declarations: [ InfoBannerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowBannerComponent);
+    fixture = TestBed.createComponent(InfoBannerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

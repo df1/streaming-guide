@@ -29,4 +29,11 @@ export class CategoryPageComponent implements OnInit {
         });
     });
   }
+
+  watch() {
+    window.open('https://www.netflix.com/title/81243996');
+  }
+
+  addToWatchList() {
+  }
 }

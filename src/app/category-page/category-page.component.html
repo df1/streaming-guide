@@ -2,7 +2,7 @@
     <app-carousel>
         <ng-container *ngFor="let item of items.slice(0,7)">
             <ng-container *carouselItem>
-                <app-show-banner [show]="item" [isLoading]="isLoading"></app-show-banner>
+                <app-info-banner [entity]="item" [isLoading]="isLoading"></app-info-banner>
             </ng-container>
         </ng-container>
     </app-carousel>
@@ -11,7 +11,7 @@
 <article>
     <h2>熱門選擇</h2>
     <div class="cardholder">
-        <mat-card *ngFor="let item of items">
+        <mat-card *ngFor="let item of items" routerLink="/info/{{item.id}}" [state]="item">
             <img mat-card-image [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
             <mat-card-header>
                 <mat-card-title>{{item.title || item.name}}</mat-card-title>

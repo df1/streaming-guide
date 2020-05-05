@@ -18,17 +18,17 @@
     </div>
 </div>
 <div class="item" *ngIf="!isLoading"
-    [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w780'+show.backdrop_path+')'">
+    [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w780'+entity.backdrop_path+')'">
     <div class="item-content">
         <div class="poster">
-            <img *ngIf="show.poster_path" [src]="'https://image.tmdb.org/t/p/w342'+show.poster_path" alt="poster" draggable="false">
-            <div *ngIf="!show.poster_path" class="poster-loading"></div>
+            <img *ngIf="entity.poster_path" [src]="'https://image.tmdb.org/t/p/w342'+entity.poster_path" alt="poster" draggable="false">
+            <div *ngIf="!entity.poster_path" class="poster-loading"></div>
         </div>
         <div class="info">
-            <h1 class="title">{{show.title || show.name}}</h1>
+            <h1 class="title">{{entity.title || entity.name}}</h1>
             <div class="facts"></div>
             <div class="overview">
-                <p>{{show.overview}}</p>
+                <p>{{entity.overview}}</p>
             </div>
             <div class="actions">
                 <button mat-flat-button color="accent" (click)="watch()"><mat-icon>play_arrow</mat-icon> 線上看</button>

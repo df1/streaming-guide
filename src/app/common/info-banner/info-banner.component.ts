@@ -2,12 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-show-banner',
-  templateUrl: './show-banner.component.html',
-  styleUrls: ['./show-banner.component.scss']
+  selector: 'app-info-banner',
+  templateUrl: './info-banner.component.html',
+  styleUrls: ['./info-banner.component.scss']
 })
-export class ShowBannerComponent implements OnInit {
-  @Input() show: any;
+export class InfoBannerComponent implements OnInit {
+  @Input() entity: any;
   @Input() isLoading: boolean;
 
   constructor(

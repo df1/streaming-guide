@@ -75,8 +75,6 @@ export class AppComponent implements OnInit{
     this.router.events
     .pipe(filter( e => e instanceof NavigationEnd ))
     .subscribe( (e:NavigationEnd) => {
-      // scroll to top
-      window.scrollTo(0, 0);
 
       // judge if it's in main page
       this.isInMainPage = e.url === '/' || e.url === '/index';
