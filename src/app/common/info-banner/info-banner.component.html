@@ -17,10 +17,10 @@
         </div>
     </div>
 </div>
-<div class="item" *ngIf="!isLoading"
-    [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w780'+entity.backdrop_path+')'">
+<div class="item" [class.limit-height]="limitHeight" *ngIf="!isLoading"
+    [style.backgroundImage]="entity.backdrop_path&&'url(https://image.tmdb.org/t/p/w780'+entity.backdrop_path+')'">
     <div class="item-content">
-        <div class="poster">
+        <div class="poster" [class.limit-height]="limitHeight">
             <img *ngIf="entity.poster_path" [src]="'https://image.tmdb.org/t/p/w342'+entity.poster_path" alt="poster" draggable="false">
             <div *ngIf="!entity.poster_path" class="poster-loading"></div>
         </div>

@@ -11,7 +11,7 @@
 <article>
     <h2>熱門選擇</h2>
     <div class="cardholder">
-        <mat-card *ngFor="let item of items" routerLink="/info/{{item.id}}" [state]="item">
+        <mat-card matRipple *ngFor="let item of items" routerLink="/info/{{item.id}}" [state]="item">
             <img mat-card-image [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
             <mat-card-header>
                 <mat-card-title>{{item.title || item.name}}</mat-card-title>

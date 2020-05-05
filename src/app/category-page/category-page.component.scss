@@ -23,14 +23,26 @@ article {
         white-space: nowrap;
         overflow-x: auto;
     }
+    @include mobile-up {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
 }
 mat-card {
     width: 160px;
     height: 385px;
     margin: 5px;
     display: inline-block;
+    cursor: pointer;
+    outline: 0;
     .mat-card-image {
         margin-bottom: 10px;
+        width: 192px;
+        height: 288px;
+        display: block;
     }
     mat-card-header {
         height: 60px;

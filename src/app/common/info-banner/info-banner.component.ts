@@ -10,6 +10,7 @@ export class InfoBannerComponent implements OnInit {
   @Input() entity: any;
   @Input() isLoading: boolean;
   @Input() limitOverviewLength: boolean = true;
+  @Input() limitHeight: boolean = true;
 
   constructor(
     private snackBar: MatSnackBar,
