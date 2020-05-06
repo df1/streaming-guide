@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../service/category.service';
 import { switchMap, startWith } from 'rxjs/operators';
@@ -13,7 +13,8 @@ export class CategoryPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private elementRef: ElementRef,
   ) { }
 
   items: any[];
@@ -28,7 +29,9 @@ export class CategoryPageComponent implements OnInit {
         of(data.categoryData)
     )), startWith([{isLoading: true}]));
 
-    // TODO when `history.back()`, need space to scroll to the previous position
+    // when `history.back()`, need space to restore scroll to the previous position
+    // defined `min-height:6000px` in css; after `OnInit`, restore to 90vh
+    this.elementRef.nativeElement.style.minHeight = '90vh';
   }
 
   watch() {

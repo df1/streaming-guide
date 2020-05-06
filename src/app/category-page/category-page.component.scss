@@ -1,6 +1,8 @@
 @import '../../styles/variables';
 :host {
-    min-height: 90vh;
+    // when `history.back()`, need space to restore scroll to the previous position
+    // will be restored to 90vh in OnInit later
+    min-height: 6000px;
     display: block;
 }
 header {
