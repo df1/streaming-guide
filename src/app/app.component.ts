@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ScrollDispatcher } from '@angular/cdk/scrolling';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { filter, debounce } from 'rxjs/operators';
 import { SPONSOR_URL } from './util/constants';
@@ -72,9 +72,13 @@ export class AppComponent implements OnInit{
     }
 
     // when route changes
-    this.router.events
-    .pipe(filter( e => e instanceof NavigationEnd ))
-    .subscribe( (e:NavigationEnd) => {
+    this.router.events.pipe(filter( e => e instanceof NavigationStart ))
+    .subscribe((e: NavigationStart) => {
+      this.isLoading = true;
+    });
+    this.router.events.pipe(filter( e => e instanceof NavigationEnd ))
+    .subscribe( (e: NavigationEnd) => {
+      this.isLoading = false;
 
       // judge if it's in main page
       this.isInMainPage = e.url === '/' || e.url === '/index';

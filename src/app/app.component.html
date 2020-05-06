@@ -1,3 +1,4 @@
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 <mat-toolbar color="primary" [class.elevated]="!isInMainPage || isScrolled ">
   <button mat-icon-button (click)="sidenav.toggle()" class="hamburger" aria-label="menu"><mat-icon>menu</mat-icon></button>
   <span class="title" routerLink="/">楓林晚 </span> &nbsp;
@@ -19,8 +20,6 @@
     <img [src]="userInfo.photoURL" alt="avatar">
   </button>
 </mat-toolbar>
-<!-- <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar> -->
-
 
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
