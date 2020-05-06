@@ -107,9 +107,17 @@
             }
             h1 {
                 font-size: 1.8em;
-                margin-top: 0;
+                margin: 0 0 5px 0;
+            }
+            .facts{
+                margin-bottom: 15px;
+                opacity: .7;
                 @include tablet-down {
-                    margin: 5px 0;
+                    margin-bottom: 5px;
+                }
+                span + span:before{
+                    content: '\2022';
+                    padding: 0 6px;
                 }
             }
             .overview {

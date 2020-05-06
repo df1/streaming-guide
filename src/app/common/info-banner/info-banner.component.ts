@@ -9,8 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class InfoBannerComponent implements OnInit {
   @Input() entity: any;
   @Input() isLoading: boolean;
-  @Input() limitOverviewLength: boolean = true;
-  @Input() limitHeight: boolean = true;
+  @Input() showDetail: boolean = false;
 
   constructor(
     private snackBar: MatSnackBar,
