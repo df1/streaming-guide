@@ -1,4 +1,9 @@
 @import '../styles/variables';
+// top progress bar
+mat-progress-bar {
+    position: fixed;
+    top: 0;
+}
 
 // top toolbar
 mat-toolbar {
