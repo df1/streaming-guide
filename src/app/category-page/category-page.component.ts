@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../service/category.service';
 import { switchMap, startWith } from 'rxjs/operators';
 import { Observable, of, iif } from 'rxjs';
+import { SHORT_TITLE,  MENU_TREE } from '../util/constants';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-category-page',
@@ -10,15 +12,16 @@ import { Observable, of, iif } from 'rxjs';
   styleUrls: ['./category-page.component.scss']
 })
 export class CategoryPageComponent implements OnInit {
+  readonly shortTitle = SHORT_TITLE;
+  readonly menuTree = MENU_TREE;
+  items$: Observable<any[]>;
 
   constructor(
     private route: ActivatedRoute,
     private categoryService: CategoryService,
     private elementRef: ElementRef,
+    private titleService: Title,
   ) { }
-
-  items: any[];
-  items$: Observable<any[]>;
 
   ngOnInit(): void {
     // if the resolver returns `{isNeedLoad: true}`, need to call `this.categoryService.getCategory()` here.
@@ -32,6 +35,12 @@ export class CategoryPageComponent implements OnInit {
     // when `history.back()`, need space to restore scroll to the previous position
     // defined `min-height:6000px` in css; after `OnInit`, restore to 90vh
     this.elementRef.nativeElement.style.minHeight = '90vh';
+
+    // change title
+    this.route.paramMap.subscribe( params => {
+      const category = this.menuTree.find( i => i.link === '/category/' + params.get('category'));
+      this.titleService.setTitle( category.name + ' - ' + this.shortTitle );
+    });
   }
 
   watch() {

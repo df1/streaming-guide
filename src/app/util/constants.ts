@@ -1,5 +1,17 @@
 export const REPO_URL = '//github.com/df1/streaming-guide';
 export const SPONSOR_URL = '//www.paypal.me/ellischang1';
+export const SHORT_TITLE = '楓林晚';
+export const TITLE = '楓林晚 - 追劇 電影 線上看';
+export const MENU_TREE = [
+  { name: '首頁', link:'/index', showInToolbar: false },
+  { name: '電影', link:'/category/movies' },
+  { name: '台劇', link:'/category/taiwan' },
+  { name: '日劇', link:'/category/japan' },
+  { name: '韓劇', link:'/category/korea' },
+  { name: '美劇', link:'/category/usa' },
+  { name: '陸劇', link:'/category/china' },
+  { name: '動畫', link:'/category/anime' },
+];
 export const PROVIDER_LIST = [
   { id: 1, name: 'Netflix' },
   { id: 2, name: 'LINE TV' },

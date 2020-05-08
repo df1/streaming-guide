@@ -4,9 +4,8 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ScrollDispatcher } from '@angular/cdk/scrolling';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 import { filter, debounce } from 'rxjs/operators';
-import { SPONSOR_URL } from './util/constants';
+import { SPONSOR_URL, SHORT_TITLE, TITLE, MENU_TREE } from './util/constants';
 import { AuthService } from './service/auth.service';
 
 @Component({
@@ -16,19 +15,9 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent implements OnInit{
   @ViewChild('sidenav') sidenav: MatSidenav;
-  readonly shortTitle = '楓林晚';
-  readonly title = '楓林晚 - 追劇 電影 線上看';
-
-  menuTree = [
-    { name: '首頁', link:'/index', showInToolbar: false },
-    { name: '電影', link:'/category/movies' },
-    { name: '台劇', link:'/category/taiwan' },
-    { name: '日劇', link:'/category/japan' },
-    { name: '韓劇', link:'/category/korea' },
-    { name: '美劇', link:'/category/usa' },
-    { name: '陸劇', link:'/category/china' },
-    { name: '動畫', link:'/category/anime' },
-  ];
+  readonly shortTitle = SHORT_TITLE;
+  readonly title = TITLE;
+  readonly menuTree = MENU_TREE;
   toolbarMenu = this.menuTree.filter(i => i.showInToolbar !== false );
   isLoading = false;
   isInMainPage: boolean;
@@ -40,7 +29,6 @@ export class AppComponent implements OnInit{
   constructor(
     private router: Router,
     private snackBar: MatSnackBar,
-    private titleService: Title,
     private changeDetectorRef: ChangeDetectorRef,
     private media: MediaMatcher,
     private scrollDispatcher: ScrollDispatcher,
@@ -82,10 +70,6 @@ export class AppComponent implements OnInit{
 
       // judge if it's in main page
       this.isInMainPage = e.url === '/' || e.url === '/index';
-
-      // change title
-      const match = this.menuTree.find( i => i.link === e.url);
-      this.titleService.setTitle( match ? (match.name + ' - ' + this.shortTitle ) : this.title  );
     });
   }
   mobileQuery: MediaQueryList;
