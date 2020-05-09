@@ -17,15 +17,15 @@
         </div>
     </div>
 </div>
-<div class="item" [class.limit-height]="!showDetail" *ngIf="!isLoading"
+<div class="item" [class.limit-height]="isDetailMode" *ngIf="!isLoading"
     [style.backgroundImage]="entity.backdrop_path&&'url(https://image.tmdb.org/t/p/w780'+entity.backdrop_path+')'">
-    <div class="item-content">
-        <div class="poster" [class.limit-height]="!showDetail">
+    <div class="item-content" [class.reverse-order]="isDetailMode">
+        <div class="poster" [class.limit-size]="isDetailMode">
             <img *ngIf="entity.poster_path" [src]="'https://image.tmdb.org/t/p/w342'+entity.poster_path" alt="poster" draggable="false">
             <div *ngIf="!entity.poster_path" class="poster-loading"></div>
         </div>
-        <div class="info">
-            <h1 class="title">{{entity.title || entity.name}}</h1>
+        <div class="info" [class.no-padding]="isDetailMode">
+            <h1 class="title" [class.big-title]="isDetailMode">{{entity.title || entity.name}}</h1>
             <div class="facts">
                 <span *ngIf="(entity.original_title || entity.original_name) !== (entity.title || entity.name)">
                     {{entity.original_title || entity.original_name}}
@@ -33,14 +33,14 @@
                 <span>{{(entity.first_air_date || entity.release_date) | slice:0:4 }}</span>
                 <span>{{entity.genre_ids.join(' ')}}</span>
             </div>
-            <div class="overview" [class.limit-overview]="!showDetail">
+            <div class="overview" *ngIf="!isDetailMode">
                 <p>{{entity.overview}}</p>
             </div>
             <div class="spacer"></div>
             <div class="actions">
-                <button mat-flat-button aria-label="Watch" color="accent" (click)="watch()"><mat-icon>play_arrow</mat-icon> 線上看</button>
+                <button *ngIf="!isDetailMode" mat-flat-button aria-label="Watch" color="accent" (click)="watch()"><mat-icon>play_arrow</mat-icon> 線上看</button>
                 <button mat-stroked-button aria-label="Add to watch list" (click)="addToWatchList()"><mat-icon>add</mat-icon> 加到片單</button>
-                <button mat-stroked-button aria-label="Details" *ngIf="!showDetail" routerLink="/info/{{entity.id}}" [state]="entity">
+                <button *ngIf="!isDetailMode" mat-stroked-button aria-label="Details" routerLink="/info/{{entity.id}}" [state]="entity">
                     <mat-icon>list</mat-icon> 更多資訊
                 </button>
             </div>

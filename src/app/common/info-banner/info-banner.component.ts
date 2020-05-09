@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class InfoBannerComponent implements OnInit {
   @Input() entity: any;
   @Input() isLoading: boolean;
-  @Input() showDetail: boolean = false;
+  @Input() isDetailMode: boolean = false;
 
   constructor(
     private snackBar: MatSnackBar,
