@@ -10,6 +10,7 @@ export class InfoBannerComponent implements OnInit {
   @Input() entity: any;
   @Input() isLoading: boolean;
   @Input() isDetailMode: boolean = false;
+  @Input() entityType: string = 'tv';
 
   constructor(
     private snackBar: MatSnackBar,
