@@ -1,3 +1,11 @@
+@import '../../styles/variables';
 article {
     padding: 20px 30px;
+}
+
+.content {
+    margin-bottom: 50px;
+}
+a{
+    color: mat-color($accent);
 }

@@ -3,6 +3,10 @@
 
     <h2>簡介</h2>
     <div class="content">
+        <p *ngIf="!entity.overview">
+            目前沒有簡介。
+            <a href="https://www.themoviedb.org/login?language=zh-TW&redirect=tv/{{entity.id}}/edit" target="_blank">貢獻內容</a>
+        </p>
         <p>{{entity.overview}}</p>
     </div>
 
