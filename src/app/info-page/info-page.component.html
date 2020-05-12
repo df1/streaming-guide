@@ -1,6 +1,5 @@
-<app-info-banner [isDetailMode]="true" [entity]="entity"></app-info-banner>
-<article>
-
+<app-info-banner *ngIf="entity" [isDetailMode]="true" [entity]="entity"></app-info-banner>
+<article *ngIf="entity">
     <h2>簡介</h2>
     <div class="content">
         <p *ngIf="!entity.overview">
@@ -15,3 +14,7 @@
         <p>目前沒有平台播映本作品</p>
     </div>
 </article>
+<div *ngIf="error" class="error">
+    <h2>找不到影劇資料</h2>
+    <p>{{error}}</p>
+</div>

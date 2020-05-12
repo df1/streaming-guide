@@ -11,6 +11,7 @@ import { TITLE } from '../util/constants';
 export class InfoPageComponent implements OnInit {
   readonly pageTitle = TITLE;
   entity: any;
+  error: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,8 +21,14 @@ export class InfoPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.data
     .subscribe( data => {
-      this.entity = data.entity;
-      this.titleService.setTitle( (this.entity.title || this.entity.name) + ' - ' + this.pageTitle );
+      if( data.entity.error ){
+        // error handling
+        this.error = data.entity.error.message;
+      } else {
+        this.entity = data.entity;
+        // set the page title for SEO
+        this.titleService.setTitle( (this.entity.title || this.entity.name) + ' - ' + this.pageTitle );
+      }
     });
   }
 

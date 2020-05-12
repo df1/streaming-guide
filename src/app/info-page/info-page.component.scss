@@ -6,6 +6,11 @@ article {
 .content {
     margin-bottom: 50px;
 }
+
 a{
     color: mat-color($accent);
+}
+
+.error {
+    text-align: center;
 }
