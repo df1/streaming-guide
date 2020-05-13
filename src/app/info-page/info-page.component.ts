@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { TITLE } from '../util/constants';
 
 @Component({
   selector: 'app-info-page',
@@ -9,7 +8,6 @@ import { TITLE } from '../util/constants';
   styleUrls: ['./info-page.component.scss']
 })
 export class InfoPageComponent implements OnInit {
-  readonly pageTitle = TITLE;
   entity: any;
   error: string;
 
@@ -27,7 +25,7 @@ export class InfoPageComponent implements OnInit {
       } else {
         this.entity = data.entity;
         // set the page title for SEO
-        this.titleService.setTitle( (this.entity.title || this.entity.name) + ' - ' + this.pageTitle );
+        this.titleService.setTitle( (this.entity.title || this.entity.name));
       }
     });
   }
