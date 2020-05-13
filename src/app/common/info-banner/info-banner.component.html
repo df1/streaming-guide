@@ -31,7 +31,7 @@
                     {{entity.original_title || entity.original_name}}
                 </span>
                 <span>{{(entity.first_air_date || entity.release_date) | slice:0:4 }}</span>
-                <span>{{entity.genre_ids.join(' ')}}</span>
+                <span>{{entity.genre_ids.join('/')}}</span>
             </div>
             <div class="overview" *ngIf="!isDetailMode">
                 <p>{{entity.overview}}</p>
