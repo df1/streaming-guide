@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { from, Observable } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ export class AuthService {
 
   constructor(
     private angularFireAuth: AngularFireAuth,
+    private router: Router,
   ) {
     this.user = angularFireAuth.authState;
     this.user.subscribe( user => {
@@ -49,6 +50,11 @@ export class AuthService {
 
   getUserInfo() {
     return this.userInfo;
+  }
+
+  performActionAfterLogin(method: () => any, thisarg: any, ...args: any) {
+    // method.apply(thisarg, args);
+    // this.router.navigateByUrl('/login');
   }
 }
 

@@ -5,6 +5,7 @@ import { switchMap, startWith, map } from 'rxjs/operators';
 import { Observable, of, iif } from 'rxjs';
 import { MENU_TREE } from '../util/constants';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-category-page',
@@ -21,6 +22,7 @@ export class CategoryPageComponent implements OnInit {
     private categoryService: CategoryService,
     private elementRef: ElementRef,
     private titleService: Title,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -52,5 +54,8 @@ export class CategoryPageComponent implements OnInit {
   }
 
   addToWatchList() {
+    this.authService.performActionAfterLogin(()=>{
+
+    }, this);
   }
 }
