@@ -6,6 +6,7 @@ import { Observable, of, iif } from 'rxjs';
 import { MENU_TREE } from '../util/constants';
 import { Title } from '@angular/platform-browser';
 import { AuthService } from '../service/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-category-page',
@@ -23,6 +24,7 @@ export class CategoryPageComponent implements OnInit {
     private elementRef: ElementRef,
     private titleService: Title,
     private authService: AuthService,
+    private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -49,13 +51,21 @@ export class CategoryPageComponent implements OnInit {
     });
   }
 
-  watch() {
+  watch(id: string, e: Event) {
+    e.stopPropagation();
     window.open('https://www.netflix.com/title/81243996');
   }
 
-  addToWatchList() {
-    this.authService.performActionAfterLogin(()=>{
+  addToWatchList(id: string, e: Event) {
+    e.stopPropagation();
+    this.authService.performActionAfterLogin( (id: string) => {
+      this.snackBar.open('Not yet implemented','OK', {
+        duration: 1000
+      });
+    }, this, id);
+  }
 
-    }, this);
+  stopRipple(e: Event) {
+    e.stopPropagation();
   }
 }

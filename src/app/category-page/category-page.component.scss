@@ -46,6 +46,20 @@ mat-card {
         height: 288px;
         display: block;
     }
+    .poster-mask {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        background-image: linear-gradient(to bottom, #00000055 0px, #00000000 100%);
+        left: 0;
+        top: 0;
+    }
+    .favorite {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        color: #ffffffaa;
+    }
     mat-card-header {
         height: 60px;
         ::ng-deep .mat-card-header-text {
