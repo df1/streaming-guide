@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private user: Observable<firebase.User>;
   private userInfo: firebase.User = null;
+  private actionBeforeLogin: any;
 
   constructor(
     private angularFireAuth: AngularFireAuth,
@@ -33,7 +34,20 @@ export class AuthService {
     provider.setCustomParameters({
       allow_signup: 'false'
     });
-    return from(this.angularFireAuth.signInWithPopup(provider));
+    let signIn$: Observable<auth.UserCredential>;
+    if( location.hostname === 'localhost' ){
+      signIn$ = from(this.angularFireAuth.signInAnonymously());
+    } else {
+      signIn$ = from(this.angularFireAuth.signInWithPopup(provider));
+    }
+    signIn$.subscribe( result => {
+      // call actionBeforeLogin if there is one
+      if( result.user && this.actionBeforeLogin ) {
+        this.actionBeforeLogin.method.apply(this.actionBeforeLogin.thisarg, this.actionBeforeLogin.args);
+        this.actionBeforeLogin = undefined;
+      }
+    });
+    return signIn$;
   }
 
   signOut() {
@@ -52,9 +66,14 @@ export class AuthService {
     return this.userInfo;
   }
 
-  performActionAfterLogin(method: () => any, thisarg: any, ...args: any) {
-    // method.apply(thisarg, args);
-    // this.router.navigateByUrl('/login');
+  performActionAfterLogin(method: (...args: any) => any, thisarg: any, ...args: any) {
+    if(this.isLoggedIn()){
+      method.apply(thisarg, args);
+    } else {
+      // temporarily save the action to actionBeforeLogin
+      this.actionBeforeLogin = { method, thisarg, args };
+      this.router.navigateByUrl('/login');
+    }
   }
 }
 
