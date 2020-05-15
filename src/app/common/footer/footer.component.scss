@@ -15,6 +15,12 @@ footer {
     .footer-block {
         margin: 0 24px;
         vertical-align: top;
+        &.two-column ul{
+            display: grid;
+            grid-column-gap: 5px;
+            grid-template-columns: auto auto;
+            white-space: nowrap;
+        }
     }
 
     a {

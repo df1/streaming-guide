@@ -1,5 +1,13 @@
 <footer>
     <div class="grid-fluid">
+        <div class="footer-block two-column">
+            <h3>分類</h3>
+            <ul>
+                <li *ngFor="let i of MENU_TREE">
+                    <a [href]="i.link" (click)="categoryClick($event)" [routerLink]="i.link">{{i.name}}</a>
+                </li>
+            </ul>
+        </div>
         <div class="footer-block">
             <h3>資料來源</h3>
             <ul>
@@ -21,13 +29,12 @@
         <div class="footer-block">
             <h3>貢獻</h3>
             <ul>
-                <li><a rel="noreferrer" href="{{REPO_URL}}/issues" target="_blank">問題回報/功能建議</a></li>
-                <li><a rel="noreferrer" href="{{REPO_URL}}" target="_blank">協助開發 (Github)</a></li>
-                <li><a rel="noreferrer" href="//ocf.tw/about/" target="_blank">支持開放源碼</a></li>
+                <li><a rel="noreferrer" href="{{REPO_URL}}/issues" target="_blank">問題回報</a></li>
+                <li><a rel="noreferrer" href="{{REPO_URL}}" target="_blank">協助開發</a></li>
+                <li><a rel="noreferrer" href="//ocf.tw/about/" target="_blank">支持開源</a></li>
                 <li><a rel="noreferrer" href="{{SPONSOR_URL}}" target="_blank">贊助我</a></li>
             </ul>
         </div>
     </div>
-    <p>This website is built with Angular. This page reuses part of the styles from <a rel="noreferrer" href="//angular.io" target="_blank">angular.io</a>.</p>
     <p>Copyright 8maple.us &copy; 2020. Code licensed under MIT License.</p>
 </footer>
