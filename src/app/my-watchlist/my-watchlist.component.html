@@ -1,3 +1,6 @@
 <div class="container">
     <h2>我的片單</h2>
+    <p *ngFor="let item$ of watchlist$ | async">
+        {{item$ | async | json}}
+    </p>
 </div>

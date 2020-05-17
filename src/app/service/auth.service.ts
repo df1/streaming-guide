@@ -35,7 +35,7 @@ export class AuthService {
       allow_signup: 'false'
     });
     let signIn$: Observable<auth.UserCredential>;
-    if( location.hostname === 'localhost' ){
+    if( location.hostname === 'localhost1' ){
       signIn$ = from(this.angularFireAuth.signInAnonymously());
     } else {
       signIn$ = from(this.angularFireAuth.signInWithPopup(provider));
