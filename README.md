@@ -8,6 +8,13 @@ This project is to provide a guide to video watchers where can they watch a spec
 - GraphQL / Appolo
 - Angular
 
+## Development Environment Setup
+```bash
+ng serve -c=dev
+```
+With `-c=dev` configuration on, it will add the files of /src/test-util/ to local testing server.
+If the local host name is `127.0.0.1`, it will use Firebase Auth's anonymous login by default. Otherwise, you may use `localhost` to use OAuth sign in methods.
+
 # Supported Streaming Platforms
 ## Taiwan
 - Apple TV+
