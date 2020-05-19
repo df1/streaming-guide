@@ -67,6 +67,12 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
+            },
+            "dev": {
+              "assets": [
+                "src/assets",
+                "src/test-util"
+              ]
             }
           }
         },
@@ -78,6 +84,9 @@
           "configurations": {
             "production": {
               "browserTarget": "streaming-guide:build:production"
+            },
+            "dev": {
+              "browserTarget": "streaming-guide:build:dev"
             }
           }
         },
@@ -95,7 +104,6 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/404.html",
               "src/favicon.ico",
               "src/assets"
             ],
