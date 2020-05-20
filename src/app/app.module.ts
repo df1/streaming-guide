@@ -36,6 +36,7 @@ import { LoginComponent } from './common/login/login.component';
 import { MyWatchlistComponent } from './my-watchlist/my-watchlist.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { InfoBannerComponent } from './common/info-banner/info-banner.component';
+import { InfoCardComponent } from './common/info-card/info-card.component';
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
@@ -59,7 +60,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     LoginComponent,
     MyWatchlistComponent,
     InfoPageComponent,
-    InfoBannerComponent
+    InfoBannerComponent,
+    InfoCardComponent
   ],
   imports: [
     BrowserModule,

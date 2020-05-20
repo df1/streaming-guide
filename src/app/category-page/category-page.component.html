@@ -10,26 +10,6 @@
 <article>
     <h2>熱門選擇</h2>
     <div class="cardholder">
-        <mat-card matRipple *ngFor="let item of items$ | async" routerLink="/{{entityType$ | async}}/{{item.id}}" [state]="item">
-            <img mat-card-image [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+item.poster_path" alt="poster" draggable="false">
-            <div class="poster-mask"></div>
-            <button class="favorite" mat-icon-button aria-label="Add to list" matTooltip="加到片單"
-                (mousedown)="stopRipple($event)" (click)="addToWatchList(item.id, $event)">
-                <mat-icon>favorite</mat-icon>
-            </button>
-            <mat-card-header>
-                <mat-card-title>{{item.title || item.name}}</mat-card-title>
-                <mat-card-subtitle
-                    *ngIf="(item.original_title || item.original_name) !== (item.title || item.name)">
-                    {{item.original_title || item.original_name}}
-                </mat-card-subtitle>
-            </mat-card-header>
-            <!-- <mat-card-content>
-                <p>{{item.overview}}</p>
-            </mat-card-content> -->
-            <mat-card-actions>
-                <button mat-stroked-button (mousedown)="stopRipple($event)" (click)="watch(item.id, $event)">線上看</button>
-            </mat-card-actions>
-        </mat-card>
+        <app-info-card *ngFor="let item of items$ | async" [entity]="item" [entityType]="entityType$ | async"></app-info-card>
     </div>
 </article>

@@ -23,8 +23,6 @@ export class CategoryPageComponent implements OnInit {
     private categoryService: CategoryService,
     private elementRef: ElementRef,
     private titleService: Title,
-    private authService: AuthService,
-    private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -51,21 +49,4 @@ export class CategoryPageComponent implements OnInit {
     });
   }
 
-  watch(id: string, e: Event) {
-    e.stopPropagation();
-    window.open('https://www.netflix.com/title/81243996');
-  }
-
-  addToWatchList(id: string, e: Event) {
-    e.stopPropagation();
-    this.authService.performActionAfterLogin( (id: string) => {
-      this.snackBar.open('Not yet implemented','OK', {
-        duration: 1000
-      });
-    }, this, id);
-  }
-
-  stopRipple(e: Event) {
-    e.stopPropagation();
-  }
 }
