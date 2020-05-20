@@ -5,7 +5,7 @@ import { ScrollDispatcher } from '@angular/cdk/scrolling';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { filter, debounce } from 'rxjs/operators';
-import { SPONSOR_URL, SHORT_TITLE, TITLE, MENU_TREE } from './util/constants';
+import { SPONSOR_URL, SHORT_TITLE, TITLE, MENU_TREE, CATEGORY_LIST } from './util/constants';
 import { AuthService } from './service/auth.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
   readonly shortTitle = SHORT_TITLE;
   readonly title = TITLE;
   readonly menuTree = MENU_TREE;
-  toolbarMenu = this.menuTree.filter(i => i.showInToolbar !== false );
+  readonly toolbarMenu = CATEGORY_LIST;
   isLoading = false;
   isInMainPage: boolean;
   isScrolled = false;

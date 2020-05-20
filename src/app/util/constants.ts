@@ -2,15 +2,21 @@ export const REPO_URL = '//github.com/df1/streaming-guide';
 export const SPONSOR_URL = '//www.paypal.me/ellischang1';
 export const SHORT_TITLE = '楓林晚';
 export const TITLE = '楓林晚 - 追劇 電影 線上看';
+export const CATEGORY_MAP = {
+  movies: { name: '電影', type:'movie' },
+  taiwan: { name: '台劇', type:'tv' },
+  japan:  { name: '日劇', type:'tv' },
+  korea:  { name: '韓劇', type:'tv' },
+  usa:    { name: '美劇', type:'tv' },
+  china:  { name: '陸劇', type:'tv' },
+  anime:  { name: '動畫', type:'tv' },
+};
+export const CATEGORY_LIST = [...Object.keys(CATEGORY_MAP).map( k =>
+  ({name: CATEGORY_MAP[k].name, link:`/category/${k}`})
+)];
 export const MENU_TREE = [
   { name: '首頁', link:'/index', showInToolbar: false },
-  { name: '電影', link:'/category/movies' },
-  { name: '台劇', link:'/category/taiwan' },
-  { name: '日劇', link:'/category/japan' },
-  { name: '韓劇', link:'/category/korea' },
-  { name: '美劇', link:'/category/usa' },
-  { name: '陸劇', link:'/category/china' },
-  { name: '動畫', link:'/category/anime' },
+  ...CATEGORY_LIST,
 ];
 export const PROVIDER_LIST = [
   { id: 1, name: 'Netflix' },

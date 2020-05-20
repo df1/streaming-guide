@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { REPO_URL, SPONSOR_URL, MENU_TREE } from '../../util/constants';
+import { REPO_URL, SPONSOR_URL, CATEGORY_LIST } from '../../util/constants';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +9,7 @@ import { REPO_URL, SPONSOR_URL, MENU_TREE } from '../../util/constants';
 export class FooterComponent implements OnInit {
   readonly REPO_URL = REPO_URL;
   readonly SPONSOR_URL = SPONSOR_URL;
-  readonly MENU_TREE = MENU_TREE.filter( i => i.showInToolbar === undefined );
+  readonly MENU_TREE = CATEGORY_LIST;
   constructor() { }
 
   ngOnInit(): void {

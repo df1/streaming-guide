@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../service/category.service';
 import { switchMap, startWith, map } from 'rxjs/operators';
 import { Observable, of, iif } from 'rxjs';
-import { MENU_TREE } from '../util/constants';
+import { CATEGORY_MAP } from '../util/constants';
 import { Title } from '@angular/platform-browser';
 import { AuthService } from '../service/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./category-page.component.scss']
 })
 export class CategoryPageComponent implements OnInit {
-  readonly menuTree = MENU_TREE;
+  readonly CATEGORY_MAP = CATEGORY_MAP;
   items$: Observable<any[]>;
   entityType$: Observable<string>;
 
@@ -46,7 +46,7 @@ export class CategoryPageComponent implements OnInit {
 
     // change title
     this.route.paramMap.subscribe( params => {
-      const category = this.menuTree.find( i => i.link === '/category/' + params.get('category'));
+      const category = this.CATEGORY_MAP[params.get('category')];
       this.titleService.setTitle( category.name );
     });
   }
