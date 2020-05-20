@@ -1867,7 +1867,7 @@ class AuthService {
             allow_signup: 'false'
         });
         let signIn$;
-        if (location.hostname === 'localhost1') {
+        if (location.hostname === '127.0.0.1') {
             signIn$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(this.angularFireAuth.signInAnonymously());
         }
         else {
