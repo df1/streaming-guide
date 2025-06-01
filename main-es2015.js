@@ -2041,7 +2041,7 @@ class CategoryService {
         this.http = http;
     }
     getCategory(category) {
-        return this.http.get(`/assets/sample-data/${category}.json`)
+        return this.http.get(`./assets/sample-data/${category}.json`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])((data) => {
             data.forEach(i => i.genre_ids = i.genre_ids.map(genre => _util_constants__WEBPACK_IMPORTED_MODULE_1__["GENRE_MAP"][genre]));
             return data;
