@@ -4274,7 +4274,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CategoryService, [{
         key: "getCategory",
         value: function getCategory(category) {
-          return this.http.get("/assets/sample-data/".concat(category, ".json")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+          return this.http.get("./assets/sample-data/".concat(category, ".json")).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
             data.forEach(function (i) {
               return i.genre_ids = i.genre_ids.map(function (genre) {
                 return _util_constants__WEBPACK_IMPORTED_MODULE_1__["GENRE_MAP"][genre];
